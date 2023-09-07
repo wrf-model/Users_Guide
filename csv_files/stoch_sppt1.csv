@@ -1,0 +1,21 @@
+sppt,0,"set to =1 to turn on stochastically-perturbed
+physics tendences (SPPT)",max_dom
+lengthscale_sppt,150000,random perturbation lengthscale (in meters),max_dom
+timescale_sppt,21600,"temporal decorrelation of random field
+(in seconds)",max_dom
+sppt_vertstruc,0,"vertical structure for SPPT;
+
+=0 : constant
+
+=1 : random phase",single entry
+gridpt_stddev_sppt,0.5,"standard deviation of random perturbation
+field at each grid point",max_dom
+stddev_cutoff_sppt,2.0,"cutoff tails of perturbation pattern above
+this threshold standard deviation",max_dom
+iseed_sppt,53,"seed for random number stream for SPPT; 
+This is combined with parameter nens, 
+signifying ensemble member number and 
+initial start time to ensure different random 
+number streams for forecasts starting from 
+different initial times and for different 
+ensemble members",single entry

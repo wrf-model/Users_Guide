@@ -1,0 +1,14 @@
+num_moves,0,total number of moves for all domains,single entry
+move_id,"(for example)
+
+2, 2",a list of the nest domain ID for each move,max moves
+move_interval,"(for example)
+
+60, 120","time (in mins) since the nest simulation
+began (for each domain)",max moves
+"move_cd_x
+
+move_cd_y","(for example)
+
+1, -1","the number of parent domain grid cells to
+move in the i and j directions (respectfully)",max moves

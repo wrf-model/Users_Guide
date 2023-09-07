@@ -1,0 +1,28 @@
+p_lev_diags,0,set to =1 to output pressure level diagnostics,single entry
+num_press_levels,0,number of pressure levels,single entry
+press_levels,0,"specifically state the desired pressure 
+levels (in Pa); one per num_press_levels",max_plevs
+use_tot_or_hyd_p,2,"pressure option;   
+1:use total pressure
+2:use hydrostatic pressure",single entry
+p_lev_missing,-999,missing value below ground,single entry
+z_lev_diags,0,"set to =1 to vertically interpolate 
+diagnostics to z-levels",single entry
+num_z_levels,0,number of height levels to interpolate to,single entry
+z_levels,0,"list of height values (in meters) to 
+interpolate data to; positive numbers are 
+for heights above mean sea level 
+(i.e., a flight level); negative numbers are 
+for levels above ground",max_zlevs
+z_lev_missing,-999,missing value below ground,single entry
+extrap_below_grnd,1,"method used for extrapolating below 
+ground;
+
+=1 : no extrapolation
+
+=2 : extrapolate adiabatically",single entry
+solar_diagnostics,0,"set to =1 to turn on solar forecasting 
+diagnostics for additional solar-related 
+outputs; see full description in the 
+""output diagnostics"" section of the WRF
+Users' Guide; new since V4.2",single entry

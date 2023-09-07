@@ -1,0 +1,3 @@
+hailcast_opt,0,set to =1 to turn on hailcasting option,max_dom
+haildt,0,"seconds between WRF-HAILCAST call(s)
+when hailcast_opt=1",max_dom

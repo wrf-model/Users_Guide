@@ -1,0 +1,12 @@
+dfi_bckstop_year,2004,"4-digit year of stop time for backward DFI 
+integration",single entry
+dfi_bckstop_month,3,"2-digit month of stop time for backward DFI 
+integration",single entry
+dfi_bckstop_day,13,"2-digit day of stop time for backward DFI 
+integration",single entry
+dfi_bckstop_hour,11,"2-digit hour of stop time for backward DFI 
+integration",single entry
+dfi_bckstop_minute,0,"2-digit minute of stop time for backward DFI 
+integration",single entry
+dfi_bckstop_second,0,"2-digit second of stop time for backward DFI 
+integration",single entry

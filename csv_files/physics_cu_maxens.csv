@@ -1,0 +1,5 @@
+maxiens,1,"only works with cu_physics=3,5,93",single entry
+maxens,3,"only works with cu_physics=3,5,93",single entry
+maxens2,3,"only works with cu_physics=3,5,93",single entry
+maxens3,16,"only works with cu_physics=3,5,93",single entry
+ensdim,144,"only works with cu_physics=3,5,93",single entry

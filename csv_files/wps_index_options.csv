@@ -1,0 +1,34 @@
+projection,no default,"A character string specifying the projection of the data, which may be either lambert, polar, mercator, regular_ll, albers_nad83, or polar_wgs84. No default value"
+type,no default,"A character string, either categorical or continuous, that determines whether the data in the data files should be interpreted as a continuous field or as discrete indices. For categorical data represented by a fractional field for each possible category, type should be set to continuous"
+signed,no  ,"Either yes or no, indicating whether the values in the data files (which are always represented as integers) are signed in two’s complement form or not"
+units,no default,"A character string, enclosed in quotation marks (“), specifying the units of the interpolated field; the string will be written to the geogrid output files as a variable time-independent attribute"
+description,no default,"A character string, enclosed in quotation marks (“), giving a short description of the interpolated field; the string will be written to the geogrid output files as a variable time-independent attribute"
+dx,no default,"A real value giving the grid spacing in the y-direction of the data set. If projection is one of lambert, polar, mercator, albers_nad83, or polar_wgs84, dy gives the grid spacing in meters; if projection is regular_ll, dy gives the grid spacing in degrees"
+dy,no default,"A real value giving the grid spacing in the y-direction of the data set. If projection is one of lambert, polar, mercator, albers_nad83, or polar_wgs84, dy gives the grid spacing in meters; if projection is regular_ll, dy gives the grid spacing in degrees"
+known_x,1,"A real value specifying the i-coordinate of an (i,j) location corresponding to a (latitude, longitude) location that is known in the projection"
+known_y,1,"A real value specifying the j-coordinate of an (i,j) location corresponding to a (latitude, longitude) location that is known in the projection"
+known_lat,no default,"A real value specifying the latitude of a (latitude, longitude) location that is known in the projection"
+known_lon,no default,"A real value specifying the longitude of a (latitude, longitude) location that is known in the projection"
+stdlon,no default,A real value specifying the longitude that is parallel with the y-axis in conic and azimuthal projections
+truelat1,no default,A real value specifying the first true latitude for conic projections or the only true latitude for azimuthal projections
+truelat2,no default,A real value specifying the second true latitude for conic projections
+wordsize,no default,An integer giving the number of bytes used to represent the value of each grid point in the data files
+tile_x,no default,"An integer specifying the number of grid points in the x-direction, excluding any halo points, for a single tile of source data"
+tile_y,no default,"An integer specifying the number of grid points in the y-direction, excluding any halo points, for a single tile of source data"
+tile_z,no default,"An integer specifying the number of grid points in the z-direction for a single tile of source data; this keyword serves as an alternative to the pair of keywords tile_z_start and tile_z_end, and when this keyword is used, the starting z-index is assumed to be 1"
+tile_z_start,no default,"An integer specifying the starting index in the z-direction of the array in the data files. If this keyword is used, tile_z_end must also be specified"
+tile_z_end,no default,"An integer specifying the ending index in the z-direction of the array in the data files. If this keyword is used, tile_z_start must also be specified"
+category_min,no default,"For categorical data (type=categorical), an integer specifying the minimum category index that is found in the data set. If this keyword is used, category_max must also be specified"
+category_max,no default,"For categorical data (type=categorical), an integer specifying the maximum category index that is found in the data set. If this keyword is used, category_min must also be specified"
+tile_bdr,0,"An integer specifying the halo width, in grid points, for each tile of data"
+missing_value,no default,"A real value that, when encountered in the data set, should be interpreted as missing data"
+scale_factor,1,A real value that data should be scaled by (through multiplication) after being read in as integers from tiles of the data set
+row_order,bottom_top,"A character string, either bottom_top or top_bottom, specifying whether the rows of the data set arrays were written proceeding from the lowest-index row to the highest (bottom_top) or from highest to lowest (top_bottom). This keyword may be useful when utilizing some USGS data sets, which are provided in top_bottom order"
+endian,big,"A character string, either big or little, specifying whether the values in the static data set arrays are in big-endian or little-endian byte order"
+iswater,16,An integer specifying the land use category of water
+islake,"-1 (i.e., no separate inland water category)",An integer specifying the land use category of inland water bodies
+isice,24,An integer specifying the land use category of ice
+isurban,1,An integer specifying the land use category of urban areas
+isoilwater,14,An integer specifying the soil category of water
+mminlu,USGS,"A character string, enclosed in quotation marks (“), indicating which section of WRF’s LANDUSE.TBL and VEGPARM.TBL will be used when looking up parameters for land use categories"
+filename_digits,5,An integer specifying the number of digits used in the names of data tiles. Possible values are 5 or 6

@@ -1,0 +1,60 @@
+aer_aod550_opt,1,"option to determine input value for AOD
+at 550 nm;
+
+=1 : input constant value from namelist
+option ""aer_aod550_val""
+
+=2 : input value from auxiliary input 15; 
+which is a time-varying 2d grid in NetCDF 
+wrf-compatible format",max_dom
+aer_aod550_val,0.12,"value used when ""aer_aod550_opt=1""",max_dom
+aer_angexp_opt,1,"option to determine input value for
+Angstrom exponent;
+
+=1 : input constant value from namelist
+option ""aer_angexp_val""
+
+=2 : input value from auxiliary input 5; 
+which is a time-varying 2d grid in NetCDF 
+wrf-compatible format
+
+=3 : value estimated from the aerosol
+type defined in ""aer_type,"" and modulated 
+with the RH in WRF",max_dom
+aer_angexp_val,1.3,"value used when ""aer_angexp_opt=1""",max_dom
+aer_ssa_opt,1,"option to determine input value for
+single scattering albedo;
+
+=1 : input constant value from namelist
+option ""aer_ssa_val""
+
+=2 : input value from auxiliary input 5; 
+which is a time-varying 2d grid in NetCDF 
+wrf-compatible format
+
+=3 : value estimated from the aerosol
+type defined in ""aer_type,"" and modulated 
+with the RH in WRF",max_dom
+aer_ssa_val,0.85,"value used when ""aer_ssa_opt=1""",max_dom
+aer_asy_opt,1,"option to determine input value for
+asymmetry parameter;
+
+=1 : input constant value from namelist
+option ""aer_asy_val""
+
+=2 : input value from auxiliary input 5; 
+which is a time-varying 2d grid in NetCDF 
+wrf-compatible format
+
+=3 : value estimated from the aerosol
+type defined in ""aer_type,"" and modulated 
+with the RH in WRF",max_dom
+aer_asy_val,0.90,"value used when ""aer_asy_opt=1""",max_dom
+aer_type,1,"aerosol type used with the above ""aer*"" 
+options;
+
+=1 : rural
+
+=2 : urban
+
+=3 : maritime",max_dom

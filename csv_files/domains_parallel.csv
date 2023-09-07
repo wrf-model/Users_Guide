@@ -1,0 +1,12 @@
+"tile_sz_x
+tile_sz_y",0,"number of points in the x and y directions
+for OpenMP processing",single entry
+numtiles,1,"number of tiles per patch (an alternative
+option to ""tile_sz_x"" and ""tile_sz_y"") for
+OpenMP processing",single entry
+"nproc_x
+nproc_y",-1,"number of processors in the x and y
+directions for decomposition when using
+MPI processing; default value of -1 =
+turned off - code will use automatic
+decomposition",single entry

@@ -1,0 +1,282 @@
+hybrid_opt,2,"dynamical coordinate option;
+
+=0 : original WRF terrain-following 
+coordinate (default for V3)
+
+=2 : Klemp cubic form for etac (became
+default in V4)",single entry 
+etac,0.2,"znw(k) < etac; eta surfaces are isobaric;
+0.2 is a good default value",single entry
+rk_ord,3,"time integration scheme;
+
+=2 : Runge-Kutta 2nd order
+
+=3 : Runge-Kutta 3rd order; recommended
+setting",single entry
+diff_opt,-1,"turbulence and mixing option;
+
+=0 : no turbulence or explicit spatial
+numerical filters; km_opt is ignored
+
+=1 : evaluates 2nd order diffusion term
+on coordinate surfaces; uses kvdif
+for vertical diffusion unless the PBL
+option is used; may be used with
+km_opt=1, which is recommended
+for real-data cases, and km_opt=4
+
+=2 : evaluates mixing terms in physical
+space (stress form; x,y,z); turbulence
+parameterization is chosen by
+specifying km_opt",max_dom
+km_opt,-1,"eddy coefficient option;
+
+=0 : turned off
+
+=1 : constant; use khdif and kvdif
+
+=2 : 1.5 order TKE closure (3D); not
+recommeded for DX > 2 km
+
+=3 : Smagorinsky first order closure (3D);
+not recommended for Dx > 2km
+
+=4 : horizontal Smagorinsky first order
+closure; recommended for real-data cases
+
+=5 : Scale-aware 3DTKE LES/PBL scheme;
+must be used with diff_opt=2 and 
+bl_pbl_physics=0, and
+sf_sfclay_physics=1,5,91; new in V4.2",max_dom
+diff_6th_opt,0,"6th-order numerical diffusion option;
+
+=0 : no 6th-order diffusion
+
+=1 : 6th-order numerical diffusion
+
+=2 : 6th-order numerical diffusion, but
+prohibits up-gradient diffusion",max_dom
+diff_6th_factor,0.12,"6th-order numerical diffusion 
+non-dimensional rate; max value 1.0 
+corresponds to complete removal of 2dx 
+wave in one timestep",max_dom
+diff_6th_slopeopt,0,"set to =1 to turn on 6th-order numerical 
+diffusion – terrain-slope tapering",max_dom
+diff_6th_thresh,0.1,"slope threshold (m/m) that turns off 6th 
+order diff in steep terrain",max_dom
+damp_opt,3,"upper-level damping flag;
+
+=0 : no damping
+
+=1 : diffusive damping; may be used for
+real-data cases; dampcoef
+nondimensional ~ 0.01 to 0.1
+
+=2 : Rayleigh damping; dampcoef inverse
+time scale (1/s), for e.g., 0.003
+
+=3 : Rayleigh damping; for real-data
+cases; dampcoef inverse time 
+scale (1/s), for e.g., 0.2",single entry
+use_theta_m,1,"use moist theta(1+1.61Qv); set to 0 to
+turn off",single entry
+use_q_diabatic,0,"set to =1 to turn on inclusion of QV and QC 
+tendencies in advection; helps to produce 
+correct solution in an idealized 'moist 
+benchmark' test case (Bryan, 2014); in 
+real-data testing, reduce time_step to 
+maintain stability",single entry
+c_s,0.25,Smagorinsky coefficient,max_dom
+c_k,0.15,TKE coefficient,max_dom
+zdamp,5000,damping depth (in meters) from model top,max_dom
+dampcoef,0.2,damping coefficient; see damp_opt,max_dom
+w_damping,0,"set to =1 to turn on vertical velocity 
+damping flag; for operational use",single entry
+w_crit_cfl,1,"default vertical courant number where 
+vertical damping begins",single entry
+zadvect_implicit,0,"set to =1 to use implicit/explicit vertical 
+advection (IEVA) scheme",single entry
+base_pres,100000,"base state surface pressure (in Pa); 
+real-data cases only; not recommended to 
+change default value",single entry
+base_temp,290,"base state temperature (in K); real-data
+cases only",single entry
+base_lapse,50,"lapse rate (in K); not recommended to 
+change default value; real-data cases only",single entry
+iso_temp,200,"isothermal temperature in the statosphere; 
+enables the model to be extended to 5 mb; 
+real-data cases only",single entry
+base_pres_strat,0,"base state pressure (in Pa) at the bottom 
+of the stratosphere; US Standard 
+atmosphere 55 hPa; real-data cases only",single entry
+base_lapse_strat,-11,"base state lapse rate (dT/d(lnP)) in the 
+stratosphere; approximate to US standard 
+atmosphere -12K; real-data cases only",single entry
+use_baseparm_fr_nml,.false.,"set to =.true. for backward compatibility; 
+to use with wrfinput files produced prior to 
+V3.4",single entry
+use_input_w,.false.,"set to =.true. to use vertical velocity from 
+the input file",single entry
+khdif,0,horizontal diffusion constant (m2/s),max_dom
+kvdif,0,vertical diffusion constant (m2/s),max_dom
+smdiv,0.1,divergence damping; 0.1 is typical,max_dom
+emdiv,0.01,"external-mode filter coef for mass 
+coordinate model; 0.01 is typical for 
+real-data cases",max_dom
+epssm,0.1,"time off-centering (slightly forward) for 
+vertical pressure gradient (or sound waves)
+in an effort to damp 3-d divergence; set
+no greater than 0.5",max_dom
+non-hydrostatic,.true.,"model is run in non-hydrostatic mode; 
+set to .false. to run in hydrostatic mode",max_dom
+pert_coriolis,.false.,"set to =.true. to have coriolis only act on 
+wind perturbation; only for idealized cases",max_dom
+top_lid,.false.,"set to =.true. for zero vertical motion at the
+top of domain; only for idealized cases",max_dom
+mix_full_fields,.false.,"used with diff_opt=2; recommended
+setting is .true. except for highly-idealized
+numerical tests; damp_opt must not =1;
+a setting of .false. subtracts 1D base-state
+profile before mixing",max_dom
+mix_isotropic,0,"if =0 : anistropic vertical/horizontal diffusion
+
+=1 : isotropic; only works with km_opt=2, 3",max_dom
+mix_upper_bound,0.1,"non-dimensional upper limit for diffusion 
+coefficients; only works with km_opt=2, 3",max_dom
+h_mom_adv_order,5,"horizontal momentum advection order; 
+5=5th, etc.",max_dom
+v_mom_adv_order,3,"vertical momentum advection order; 
+3=3rd, etc.",max_dom
+h_sca_adv_order,5,"horizontal scalar advection order; 5=5th, etc.",max_dom
+v_sca_adv_order,3,"vertical scalar advection order; 3=3rd, etc.",max_dom
+time_step_sound,0,"number of sound steps per timestep; 
+if using a time_step much larger than 
+6xDX (in km), increase number of 
+sound steps",max_dom
+moist_adv_opt,1,"advection option for moisture;
+
+=0 : simple
+
+=1 : positive-definite
+
+=2 : monotonic
+
+=3 : 5th-order WENO (Weighted
+Essentially Non-Oscillatory)
+
+=4 : 5th-order WENO with positive
+definite",max_dom
+scalar_adv_opt,1,"advection option for scalars;
+
+=0 : simple
+
+=1 : positive-definite
+
+=2 : monotonic
+
+=3 : 5th-order WENO (Weighted
+Essentially Non-Oscillatory)
+
+=4 : 5th-order WENO with positive
+definite",max_dom
+tke_adv_opt,1,"advection option for TKE;
+
+=0 : simple
+
+=1 : positive-definite
+
+=2 : monotonic
+
+=3 : 5th-order WENO (Weighted
+Essentially Non-Oscillatory)
+
+=4 : 5th-order WENO with positive
+definite",max_dom
+phi_adv_z,1,"vertical advection option for geopotential;
+
+=1 : original
+
+=2 : avoid double staggering of omega",max_dom
+chem_adv_opt,1,"advection option for variables;
+
+=0 : simple
+
+=1 : positive-definite
+
+=2 : monotonic
+
+=3 : 5th-order WENO (Weighted
+Essentially Non-Oscillatory)
+
+=4 : 5th-order WENO with positive
+definite",max_dom
+tracer_adv_opt,1,"advection option for tracer variables;
+
+=0 : simple
+
+=1 : positive-definite
+
+=2 : monotonic
+
+=3 : 5th-order WENO (Weighted
+Essentially Non-Oscillatory)
+
+=4 : 5th-order WENO with positive
+definite",max_dom
+momentum_adv_opt,1,"advection option for momentum;
+
+=1 : standard
+
+=3 : 5th-order WENO (Weighted 
+Essentially Non-Oscillatory)",max_dom
+tke_drag_coefficient,0,"surface drag coefficient (Cd, dimensionless);
+only works with diff_opt=2",max_dom
+tke_heat_flux,0,"surface thermal flux (H/rho x cp); (K ms-1); 
+only work with diff_opt=2",max_dom
+fft_filter_lat,91,"the latitude (in degrees) above which the 
+polar filter is turned on for a global model
+simulation; -45 is a reasonable latitude 
+to start using polar filters",single entry
+coupled_filtering,.true.,"a setting of =.true. means mu coupled 
+scalar arrays are run through the polar filters",single entry
+pos_def,.false.,"set to =.true. to remove negative values of 
+scalar arrays by setting minimum value to 
+zero",single entry
+swap_pole_with_next_j,.false.,"set to =.true. to replace the entire 
+j=1 (jds-1) with the values from j=2 (jds-2)",single entry
+actual_distance_average,.false.,"set to =.true. to average the field at each 
+i location in the j-loop with a number of 
+grid points based on a map-factor ratio",single entry
+gwd_opt,0,"gravity wave drag option; can be used for 
+all grid sizes with appropriate input fields 
+from geogrid;
+
+=0 : off
+
+=1 : gravity wave drag and blocking
+
+=3 : gravity wave drag, blocking, 
+small-scale gravity drag and turbulent 
+orographic form drag",max_dom
+do_avgflx_em,0,"set to =1 to output time-averaged 
+mass-coupled advective velocities",max_dom
+do_avgflx_cugd,0,"set to =1 to output time-averaged 
+convective mass-fluxes from the 
+Grell-Devenyi ensemble scheme; only works
+when do_avgflx_em =1 and cu_physics=93",max_dom
+sfs_opt,0,"nonlinear backscatter and anisotrophy 
+(NBA);
+
+=0 : off
+
+=1 : NBA, using diagnostic stress terms; 
+only works with km_opt=2,3 for scalars
+
+=2 : NBA, using TKE-based stress terms;
+only works with km_opt=2,3",max_dom
+m_opt,0,"set to =1 to add output of Mij stress terms
+when NBA is not used",max_dom
+tracer_opt,0,"set to =2 to activate eight pre-defined
+tracers (found in the Registry file)",max_dom
+rad_nudge,0,"set to =1 to turn on nudging toward initial
+sounding in the TC idealized case",single entry

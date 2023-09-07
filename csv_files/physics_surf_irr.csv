@@ -1,0 +1,26 @@
+sf_surf_irr_scheme,0,"option to turn on surface irrigation scheme;
+
+=0 : off
+
+=1 : surface evapotranspiration; only works
+with sf_surface_physics=2
+
+=2 : leaves/canopy interception and surface
+evapotranspiration
+
+=3 : microphysics process, leaves/canopy
+interception and surface
+evapotranspiration",max_dom
+irr_daily_amount,0,"the daily irrigation water amount (mm/day)
+applied",max_dom
+irr_start_hour,0,"the local application start time for each 
+day (UTC value)",max_dom
+irr_num_hours,0,the number of hours to irrigate,max_dom
+irr_start_julianday,0,Julian day to start irrigation (included),max_dom
+irr_end_julianday,0,Julian day to end irrigation (not included),max_dom
+irr_freq,1,frequency (in days) of irrigation,max_dom
+irr_ph,0,"phase of irrigation;
+
+=0 : in phase
+
+=1 : not in phase",max_dom

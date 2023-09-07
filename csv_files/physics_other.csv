@@ -1,0 +1,18 @@
+bucket_mm,-1,"bucket reset value for water accumulation
+(in mm); useful for long (multi-year)
+simulations; default value of ""-1"" means
+inactive",single entry
+bucket_j,-1,"bucket reset value for energy accumulation
+(in Joules); useful for long (multi-year)
+simulations; default value of ""-1"" means
+inactive",single entry
+isftcflx,0,"alternative Ck (exchange coefficient for
+temperature and moisture) and Cd (drag
+coefficient for momentum) forulation for
+tropical storm application;
+    =0 : off for Ck
+    =1 : Donelan Cd + constant Z0q for Ck
+    =2 : Donelan Cd + Garratt Ck",single entry
+traj_opt,0,set to =1 to activate forward trajectories,single entry
+num_traj,1000,"number of trajectories to be released when
+traj_opt=1",single entry

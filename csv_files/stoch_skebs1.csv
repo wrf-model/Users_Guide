@@ -1,0 +1,62 @@
+skebs,0,"set to =1 to turn on stochastic kinetic-energy
+backscatter scheme (SKEBS)",max_dom
+tot_backscat_psi,1.0e-05,"total backscattered dissipation rate for
+streamfunction; controls amplitude of
+rotational wind perturbations (in m\ :sup:`2`/s\ :sup:`2`)",max_dom
+tot_backscat_psi,1.0e-06,"total backscattered dissipation rate for
+potential temperature; controls amplitude of
+potential temperature perturbations 
+(in m\ :sup:`2`/s\ :sup:`2`)",max_dom
+ztau_psi,10800.0,"decorrelation time (in seconds) for
+streamfunction perturbations",single entry
+ztau_t,10800.0,"decorrelation time (in seconds) for
+potential temperature perturbations",single entry
+rexponent_psi,-1.83,"spectral slope for streamfunction 
+perturbations; -1.83 is default for a kinetic-
+energy forcing spectrum with slope -5/3)",single entry
+rexponent_t,-1.83,"spectral slope for potential temperature
+perturbations; -1.83 is default for a potential
+energy forcing spectrum with slope -1.83\ :sup:`2`)",single entry
+kminforc,1,"minimal forcing wavenumber in longitude for 
+streamfunction perturbations",single entry
+lminforc,1,"minimal forcing wavenumber in latitude for 
+streamfunction perturbations",single entry
+kminforct,1,"minimal forcing wavenumber in longitude for 
+potential temperature perturbations",single entry
+lminforct,1,"minimal forcing wavenumber in latitude for 
+potential temperature perturbations",single entry
+kmaxforc,1000000,"maximal forcing wavenumber in longitude for 
+streamfunction perturbations; default is 
+maximal possible wavenumbers determined 
+by number of gridpoints in longitude ",single entry
+lmaxforc,1000000,"maximal forcing wavenumber in latitude for 
+streamfunction perturbations; default is 
+maximal possible wavenumbers determined 
+by number of gridpoints in latitude",single entry
+kmaxforct,1000000,"maximal forcing wavenumber in longitude for 
+potential temperature perturbations; default 
+is maximal possible wavenumbers determined 
+by number of gridpoints in longitude",single entry
+lmaxforct,1000000,"maximal forcing wavenumber in latitude for 
+potential temperature perturbations; default 
+is maximal possible wavenumbers determined 
+by number of gridpoints in latitude",single entry
+zsigma2_eps,0.0833,"noise variance in autoregressive process 
+defining streamfunction perturbations",single entry
+zsigma2_eta,0.0833,"noise variance in autoregressive process 
+defining potential temperature perturbations",single entry
+skebs_vertstruc,0,"defines the vertical structure of random 
+pattern generator;
+
+=0 : constant vertical structure of random
+pattern generator
+
+=1 : random phase vertical structure with
+westward tilt",single entry
+iseed_skebs,811,"seed for random number stream for skebs;
+this is combined with seed ""nens,""
+signifying ensemble member number and 
+initial start time to ensure different random
+number streams for forecasts starting from
+different initial times and for different
+ensemble members",single entry

@@ -1,0 +1,49 @@
+spec_bdy_width,5,"total number of rows for specified boundary 
+value nudging; only for real-data cases",single entry  
+spec_zone,1,"number of points in specified zone when
+specified=.true.; only for real-data cases",single entry
+relax_zone,4,"number of points in relaxation zone when
+specified=.true.; only for real-data cases",single entry
+specified,.false.,"set to =.true. to use a specified boundary 
+condition; can only be used for domain 1;
+only for real-data cases",max_dom
+spec_exp,0,"exponential multiplier for relaxation zone 
+ramp when specified=.true.; 0 = linear ramp; 
+0.33 = ~3*DX exp decay factor; only for
+real-data cases",single entry
+multi_bdy_files,.false.,"set to =.true. to instruct real.exe to generate
+multiple wrfbdy files (one time period per 
+file, using bdy_inname=wrfbdy_d01_<date>)",single entry
+periodic_x,.false.,"set to =.true. to use periodic boundary 
+conditions in the x-direction",max_dom
+symmetric_xs,.false.,"set to =.true. to use symmetric boundary 
+conditions on the x start side (west side)",max_dom
+symmetric_xe,.false.,"set to =.true. to use symmetric boundary 
+conditions on the x end side (east side)",max_dom
+open_xs,.false.,"set to =.true. to use open boundary 
+conditions on the x start side (west side)",max_dom
+open_xe,.false.,"set to =.true. to use open boundary 
+conditions on the x end side (east side)",max_dom
+periodic_y,.false.,"set to =.true. to use periodic boundary 
+conditions in the y-direction",max_dom
+symmetric_ys,.false.,"set to =.true. to use symmetric boundary 
+conditions on the y start side (south side)",max_dom
+symmetric_ye,.false.,"set to =.true. to use symmetric boundary 
+conditions on the y end side (north side)",max_dom
+open_ys,.false.,"set to =.true. to use open boundary 
+conditions on the y start side (south side)",max_dom
+open_ye,.false.,"set to =.true. to use open boundary 
+conditions on the y end side (north side)",max_dom
+nested,.false.,"set to =.true. to use nested boundary 
+conditions; must be set to .true. for nests",max_dom
+polar,.false.,"set to =.true. to use a polar boundary 
+condition (v=0 at polarward-most v-point); 
+use for global application",max_dom
+constant_bc,.false.,"set to =.true. to use a constant boundary 
+condition; for dfi_opt>0",single entry
+have_bcs_moist,.false.,"set to =.true. to use the microphysics 
+variables from the wrfbdy file in wrf.exe
+after running ndown",max_dom
+have_bcs_scalar,.false.,"set to =.true. to use scalar variables from 
+the wrfbdy file in wrf.exe after running 
+ndown",max_dom

@@ -1,0 +1,12 @@
+start_year,2019,4 digit year of starting time,max_dom
+start_month ,9,2 digit month of starting time,max_dom
+start_day ,4,2 digit day of starting time,max_dom
+start_hour ,12,2 digit hour of starting time,max_dom
+start_minute ,0,2 digit minute of starting time,max_dom
+start_second ,0,2 digit second of starting time,max_dom
+end_year ,2019,4 digit year of ending time,max_dom
+end_month ,9,2 digit month of ending time,max_dom
+end_day ,6,2 digit day of ending time,max_dom
+end_hour ,0,2 digit hour of ending time,max_dom
+end_minute ,0,2 digit minute of ending time,max_dom
+end_second,0,2 digit second of ending time,max_dom

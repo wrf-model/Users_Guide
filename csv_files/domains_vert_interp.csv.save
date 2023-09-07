@@ -1,0 +1,95 @@
+force_sfc_in_vinterp,1,"use the sfc level as the lower boundary
+when interpolating through the set value
+number of eta levels; 
+=0 : perform traditional trapping 
+interpolation
+=n : first 'n' eta levels directly use sfc level",single entry
+maxw_horiz_pres_diff,5000,"pressure threshold (Pa); for using level of
+max winds when pressure difference 
+between neighboring values exceeds this
+maximum, the variable is NOT inserted into
+the column for vertical interpolation; 
+real-data simulations only",single entry
+trop_horiz_press_diff,5000,"pressure threshold (Pa); for using the
+tropopause level when pressure difference 
+between neighboring values exceeds this
+maximum, the variable is NOT inserted into
+the column for vertical interpolation; 
+real-data simulations only",single entry
+maxw_above_this_level,30000,"minimum pressure level (Pa) to allow using
+the level of max wind information in real; 
+e.g., if setting this to 3000 (i.e., 300 hPa), 
+a max wind value at 500 hPa is ignored; 
+real-data simulations only",single entry
+use_trop_level,0,"set to =1 for the same as above, but with
+tropopause level data",single entry
+interp_theta,.false.,"which 'temperature' variable to vertically
+interpolate;
+=.false. : vertically interpolates temp (which
+may reduce bias when compared
+with input data)
+=.true. : vertically interpolates potential
+temp",single entry
+p_top_requested,5000,"pressure top (in Pa) to use in the model; 
+this level must be available in WPS data",single entry
+interp_type,2,"type of vertical interpolation;
+=1 : vertical interpolation is linear in 
+pressure
+=2 : vertical interpolation is linear in 
+log(pressure)",single entry
+extrap_type,2,"type of vertical extrapolation for non-
+temperature variables;
+=1 : using the two lowest levels
+=2 : using the lowest level as a constant
+below ground",single entry
+t_extrap_type,2,"type of vertical extrapolation for potential
+temperature;
+=1 : isothermal
+=2 : -6.5 K/km lapse rate for temp
+=3 : constant theta",single entry
+use_levels_below_ground,.true.,"whether to use levels below input sfc level
+for vertical interpolation; 
+=.true. : use input isobaric levels below
+input sfc
+=.false. : extrapolate when WRF location is
+below input sfc level",single entry
+use_surface,.true.,"use input sfc level data in vertical 
+interpolation",single entry
+lagrange_order,2,"type of vertical interpolation order;
+=1 : linear
+=2 : quadratic
+=9 : cubic spline",single entry
+zap_close_levels,500,"ignore isobaric levels above sfc if
+delta p (Pa) < 'zap_close_levels'",single entry
+lowest_lev_from_sfc,.false.,"how to interpolate eta levels;
+=.true. : use sfc values for lowest eta (u,v,t,q)
+=.false.: use traditional interpolation",single entry
+sfcp_to_sfcp,.false.,"set to =.true. to compute model's sfc
+pressure when incoming data only has sfc
+pressure and terrain, but not sea-level
+pressure",single entry
+use_tavg_for_tsk,.false.,"uses diurnally-averaged sfc temp (can be
+computed using WPS utility 'avg_tsfc.exe')
+as skin temp; can use when SKINTEMP is
+not present",single entry
+rh2qv_wrt_liquid,.true.,"computes qv with respect to liquid water;
+set to .false. to compute with respect to ice",single entry
+rh2qv_method,1,"method for computing mixing ratio from
+relative humidity (RH);
+=1 : old MM5 method
+=2 : WMO-recommended method (WMO-
+No. 49, corrigendum, August 2000)",single entry
+smooth_cg_topo,.false.,"set to =.true. to smooth the outer rows
+and columns of the domain 1 topography
+with respect to the input data",single entry
+vert_refine_fact,1,"vertical refinement factor for ndown; not
+used for concurrent vertical grid refinement
+=1 : same number of vertical levels as
+the coarse domain
+=2 : double the vertical resolution
+=n : etc.",single entry
+vert_refine_method,0,"vertical refinement method;
+=0 : no vertical refinement
+=1 : integer vertical refinement
+=2 : use specified or computed eta levels
+for vertical refinement",max_dom

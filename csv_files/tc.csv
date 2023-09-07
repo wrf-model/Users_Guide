@@ -1,0 +1,14 @@
+insert_bogus_storm,.false.,"set to =.true. to insert a bogus tropical 
+cyclone",single entry  
+remove_storm,.false.,"set to =.true. to remove the original tropical
+cyclone; does not work if a TC did not 
+already exist",single entry  
+num_storm,1,the number of bogus TCs in the domain,single entry  
+latc_loc,-999,center latitude of the bogus TC,max_bogus
+lonc_loc,-999,center longitude of the bogus TC,max_bogus
+vmax_meters_per_second ,-999,wind max of bogus storm (m s-1),max_bogus
+rmax,-999,"maximum radius outward from storm center 
+of bogus TC",max_bogus
+vmax_ratio ,-999,"ratio for representative maximum winds; 
+0.75 for 45 km grid, and 0.9 for 15 kim grid",max_bogus
+rankine_lid,-999,top pressure limit for the TC bogus scheme,single entry  

@@ -1,0 +1,9 @@
+nssl_alphah,0,shape parameter for graupel,max_dom
+nssl_alphahl,1,shape parameter for hail,max_dom
+nssl_cnoh,4.e5,graupel intercept,max_dom
+nssl_cnohl,4.e4,hail intercept,max_dom
+nssl_cnor,8.e5,rain intercept,max_dom
+nssl_cnos,3.e6,snow intercept,max_dom
+nssl_rho_qh,500,graupel density,max_dom
+nssl_rho_ghl,900,hail density,max_dom
+nssl_rho_qs,100,snow density,max_dom

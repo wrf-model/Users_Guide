@@ -1,0 +1,13 @@
+ocean_levels,30,number of ocean levels ,single entry
+ocean_z,,"vertical profile of layer depths for the ocean
+(in meters); for e.g., if ""ocean_levels=30,""
+""ocean_z"" should have 30 settings; see 
+run/README.namelist for details",max ocean_levels
+ocean_t,,"vertical profile of ocean temps (in K); 
+for e.g., if ""ocean_levels=30,""
+""ocean_t"" should have 30 settings; see 
+run/README.namelist for details",max ocean_levels
+ocean_s,,"vertical profile of ocean salinity; 
+for e.g., if ""ocean_levels=30,""
+""ocean_s"" should have 30 settings; see 
+run/README.namelist for details",max ocean_levels

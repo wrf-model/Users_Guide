@@ -1,0 +1,76 @@
+lightning_option,0,"lightning parameterization option to allow
+flash rate prediction without chemistry; 
+must set do_radar_ref=1;
+
+=0 : off
+
+=1 : PR92 based on maximum w; 
+redistributes flashes within dBZ > 20  
+(for convection resolved simulations)
+
+=2 : PR92 based on 20 dBZ top; redistributes
+flashes within dBZ > 20 (for convection
+resolved simulations)
+
+=3 : predicts potential for lightning activity;
+based on Yair et al., 2010
+
+=11 : PR92 based on level of neutral 
+buoyancy from convective 
+parameterization (for a scale where
+cumulus parameterization schemes is
+used; intended for use at 10<dx<50km)",max_dom
+lightning_dt,0,"time interval (in seconds) for calling lightning
+parameterization when lightning_option>0;
+when set to 0, model time step is used",max_dom
+lightning_start_seconds,0,"start time for calling lightning parameterization
+when lightning_option>0; recommend at
+least 10 minutes for spin-up",max_dom
+flashrate_factor,1.0,"factor to adjust the predicted number of
+flashes;
+
+recommended values:
+
+a) 1.0 for lightning_option=11 between
+dx=10 and 50 km
+
+b) manual tuning for all other 
+lightning_option>0 settings, 
+independently for each nest",max_dom
+cellcount_method,0,"method for counting storm cells when
+lightning_option=1 or 2;
+
+=0 : model determines method
+
+=1 : tile-wide; appropriate for large domains
+
+=2 : domain-wide; appropriate for 
+single storm domains",max_dom
+cldtop_adjustment,0,"adjustment from LNB (in km) when 
+lightning_option=11; recommend =2",max_dom
+iccg_method,0,"intra-cloud (IC) : cloud-to-ground (CG)
+partitioning method;
+
+=0 : uses default of =2 option (below)
+
+=1 : constant everywhere; must also set
+iccg_prescribed_num and 
+iccg_prescribed_den; all CG
+
+=2 : coarsely-prescribed 1995-1999 
+NLDN/OTD climatology; based on
+Boccippio et al., 2001
+
+=3 : parameterization by Price and Rind, 
+1993; based on cold-cloud depth
+
+=4 : gridded input via arrays ""iccg_in_num""
+and ""iccg_in_den"" from wrfinput for
+monthly mapped ratios; points with
+0/0 values use ratio defined by 
+iccg_prescribed_num and 
+iccg_prescribed_den",max_dom
+iccg_prescribed_num,0.0,"numerator of the user-specified prescribed 
+IC:CG",max_dom
+iccg_prescribed_den,1.0,"denomenator of the user-specified prescribed 
+IC:CG",max_dom

@@ -1,0 +1,68 @@
+nens,1,"seed for random number stream; for 
+ensemble forecasts this parameter needs to
+be different for each member; the seed is a 
+function of initial start time to ensure 
+different random number streams are created 
+for forecasts starting from different intial 
+times; changing this seed changes the random 
+number streams for all activated stochastic 
+parameterization schemes",single entry
+multi_perturb,0,"set to =1 to turn on stochastic perturbations 
+tailored for solar energy applications",max_dom
+spdt,-1.0,"frequency to update stochastic perturbations 
+(in minutes); negative value indicates every 
+time step",max_dom
+pert_farms,.false.,"set to =.true. to activate perturbations to 
+FARMS parameterization",max_dom
+pert_farms_albedo,0,set to =1 to perturb albedo,max_dom
+pert_farms_aod,0,"set to =1 to perturb aod (aerosol optical
+depth)",max_dom
+pert_farms_angexp,0,"set to =1 to perturb angexp (aerosol
+Angstrom exponent)",max_dom
+pert_farms_aerasy,0,set to =1 to perturb aerasy,max_dom
+pert_farms_qv,0,"set to =1 to perturb qv (water vapor mixing
+ratio)",max_dom
+pert_farms_qc,0,"set to =1 to perturb qc (cloud water mixing
+ratio)",max_dom
+pert_farms_qs,0,set to =1 to perturb qs (snow mixing ratio),max_dom
+pert_deng,.false.,"set to =.true. to activate perturbations to 
+Deng's shallow cumulus parameterization
+scheme (shcu_physics=5)",max_dom
+pert_deng_qv,0,"set to =1 to perturb qv (water vapor mixing
+ratio)",max_dom
+pert_deng_qc,0,"set to =1 to perturb qc (cloud water mixing
+ratio)",max_dom
+pert_deng_t,0,set to =1 to perturb temperature,max_dom
+pert_deng_w,0,set to =1 to perturb w (vertical velocity),max_dom
+pert_mynn,.false.,"set to =.true. to activate perturbations for 
+MYNN PBL schemes (bl_pbl_physics=5 or 6)",max_dom
+pert_mynn_qv,0,"set to =1 to perturb qv (water vapor mixing
+ratio)",max_dom
+pert_mynn_qc,0,"set to =1 to perturb qc (cloud water mixing
+ratio)",max_dom
+pert_mynn_t,0,set to =1 to perturb temperature,max_dom
+pert_mynn_qke,0,set to =1 to perturb w (vertical velocity),max_dom
+pert_noah,.false.,"set to =.true. to activate perturbations to 
+Noah LSM (sf_surface_physics=2)",max_dom
+pert_noah_qv,0,"set to =1 to perturb qv (water vapor mixing
+ratio)",max_dom
+pert_noah_smois,0,set to =1 to perturb smois (soil moisture),max_dom
+pert_noah_t,0,set to =1 to perturb temperature,max_dom
+pert_noah_tslb,0,set to =1 to perturb tslb (soil temperature),max_dom
+pert_thom,.false.,"set to =.true. to activate perturbations to 
+Thompson microphysics (mp_physics=8)",max_dom
+pert_thom_qv,0,"set to =1 to perturb qv (water vapor mixing
+ratio)",max_dom
+pert_thom_qc,0,"set to =1 to perturb qc (cloud water mixing
+ratio)",max_dom
+pert_thom_qi,0,set to =1 to perturb qi (ice mixing ratio),max_dom
+pert_thom_qs,0,set to =1 to perturb qs (snow mixing ratio),max_dom
+pert_thom_ni,0,"set to =1 to perturb ni (ice number
+concentration)",max_dom
+pert_cld3,.false.,"set to =.true. to activate perturbations to 
+clouds generated with icloud=3",max_dom
+pert_cld3_qv,0,"set to =1 to perturb qv (water vapor mixing
+ratio)",max_dom
+pert_cld3_t,0,set to =1 to perturb temperature,max_dom
+num_pert_3d,15,"Number of entries in STOCHPERT.TBL;
+no need to modify",single entry

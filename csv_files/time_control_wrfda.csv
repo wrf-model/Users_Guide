@@ -1,0 +1,25 @@
+write_input,.false.,"set to .true. to write input-formatted data 
+as output for 3DVAR application",single entry
+inputout_interval,0,"interval (in mins) when using the 
+'write_input' option",max_dom
+input_outname,"""wrf_3dvar_input_d<domain>_<date>""",output file name from 3DVAR,single entry
+"inputout_begin_y
+
+inputout_begin_d
+
+inputout_begin_h
+
+inputout_begin_m
+
+inputout_begin_s",0,"beginning year, day, hour, minute, and
+second (respectively) to write 3DVAR data",max_dom
+"inputout_end_y
+
+inputout_end_d
+
+inputout_end_h
+
+inputout_end_m
+
+inputout_end_s",0,"ending year, day, hour, minute, and
+second (respectively) to write 3DVAR data",max_dom

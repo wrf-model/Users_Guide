@@ -1,0 +1,28 @@
+sf_ocean_physics,0,"activates ocean model;
+
+=0 : off
+
+=1 : simple ocean mixed layer (oml) model
+
+=2 : 3D Price-Weller-Pinkel (PWP) ocean
+model",single entry
+omdt,1,"time step (mins) when sf_ocean_physics=2; 
+can be set the same as the WRF time step in 
+corresponding nested grids, but should be no 
+less than 1.0 minute",single entry
+oml_hml0,50,"initial mixed layer depth value when 
+sf_ocean_physics=1;
+
+
+=0 : from climatology
+
+>0 : constant everywhere (in meters)
+
+<0 : use input from ocean model",single entry
+oml_gamma,0.14,"lapse rate (K m\ :sup:`-1`) in deep water (below the 
+mixed layer) when sf_ocean_physics=1",single entry
+oml_relaxation_time,0,"relaxation time (seconds) when 
+sf_ocean_physics=1 back to original values; 
+e.g., a setting of 259200 seconds = 3 days",single entry
+ocean_levels,30,"number of vertical levels when 
+sf_ocean_physics=2",single entry

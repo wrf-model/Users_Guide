@@ -1,0 +1,9 @@
+nens,1,"seed for random number stream; for 
+ensemble forecasts this parameter needs to
+be different for each member; the seed is a 
+function of initial start time to ensure 
+different random number streams are created 
+for forecasts starting from different intial 
+times; changing this seed changes the random 
+number streams for all activated stochastic 
+parameterization schemes",single entry

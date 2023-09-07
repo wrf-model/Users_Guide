@@ -1,0 +1,38 @@
+use_adaptive_time_step,.false.,set to =.true. to turn on adaptive time step,single entry
+step_to_output_time,.true.,"adjusts the time step so the exact history
+time is reached",single entry
+target_cfl,1.2,"if vertical CFL <= to this value
+suggests no need to reduce the time step, 
+and therefore the time step is increased",max_dom
+target_hcfl,0.84,"if horizontal CFL <= to this value
+suggests no need to reduce the time step, 
+and therefore the time step is increased",max_dom
+max_step_increase_pct,5,"percentage of the previous time step to 
+increase; if the max(vert CFL, horiz CFL) 
+<= target_cfl, then the time step will 
+increase by this percentage; use something
+much larger for nests (e.g. = 5, 51, 51)",max_dom
+starting_time_step,-1,"any positive integer specifies the starting 
+time_step (in seconds); the default value 
+(-1) indicates 4*DX is used as the starting 
+time step; note: when 
+""use_adaptive_time_step=.true.,"" the
+value specified for ""time_step"" is ignored",max_dom
+starting_time_step_den,0,"denominator for ""starting_time_step"" in
+the case that a fractional time step is needed",max_dom
+max_time_step,-1,"any positive integer specifies the maximum 
+time_step (in seconds) that will ever be
+used during the simulation; the default 
+value (-1) indicates 8*DX is used as the 
+maximum time step",max_dom
+max_time_step_den,0,"denominator for ""max_time_step"" in
+the case that a fractional time step is needed",max_dom
+min_time_step,-1,"any positive integer specifies the minimum 
+time_step (in seconds) that will ever be
+used during the simulation; the default 
+value (-1) indicates 3*DX is used as the 
+minimum time step",max_dom
+min_time_step_den,0,"denominator for ""min_time_step"" in
+the case that a fractional time step is needed",max_dom
+adaptation_domain,1,"specifies which domain to use to drive
+adaptive time stepping",single entry

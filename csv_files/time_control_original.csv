@@ -1,0 +1,242 @@
+Namelist Parameter,"Default 
+Setting",Description,"Single Entry or 
+Entry for each 
+Domain (max_dom)"
+"run_days
+run_hours
+run_minutes
+run_seconds",0,"Simulation length in days, hours, minutes,
+and seconds; Use any combination of 
+run_* settings to obtain the full desired 
+simulation length. run_* parameters take 
+precedence over start_* and end_* times 
+when running wrf.exe; real.exe does not use 
+run_* settings.",Single entry 
+"start_* times name the first wrfout file and control the start time for restarts. 
+start_* and end_* times control the start and end time for all domains. 
+start_* and end_* times are used by real.exe. ",,,
+start_year,2019,4 digit year of starting time,max_dom
+start_month ,9,2 digit month of starting time,max_dom
+start_day ,4,2 digit day of starting time,max_dom
+start_hour ,12,2 digit hour of starting time,max_dom
+start_minute ,0,2 digit minute of starting time,max_dom
+start_second ,0,2 digit second of starting time,max_dom
+end_year ,2019,4 digit year of ending time,max_dom
+end_month ,9,2 digit month of ending time,max_dom
+end_day ,6,2 digit day of ending time,max_dom
+end_hour ,0,2 digit hour of ending time,max_dom
+end_minute ,0,2 digit minute of ending time,max_dom
+end_second,0,2 digit second of ending time,max_dom
+,,,
+interval_seconds,10800,"time interval between incoming data from 
+WPS, which is the interval (secs) between 
+times in the lateral boundary condition file;  
+em_real only",single entry
+input_from_file,.true.,whether to use input files for nest domains,max_dom
+fine_input_stream,0,"option to select fields to use from nest 
+input for initialization;
+
+= 0 : all fields are used
+
+= 2 : only input specified from input
+stream 2 (defined in Registry) are 
+used for nests; must set io_form_auxinput2",max_dom
+history_interval ,60,"Frequency (in simulation minutes) that 
+data are written/recorded to history output 
+file(s) (wrfout_d0*); can also use 
+history_interval_d, history_interval_h, 
+history_interval_m, history_interval_s, 
+alternatively to set the frequency in days,
+hours, mins, secs, respectfully",max_dom
+history_begin,0,"Number of mins from the start of the run
+in which the history output file (wrfout*)
+is written; can also use history_begin_d, 
+history_begin_h, history_begin_m, 
+history_begin_s alternatively to set the 
+frequency in days, hours, mins, secs, 
+respectfully",max_dom
+frames_per_outfile,1,"number of history output times bulked into 
+each history file; used to split output files 
+into smaller pieces",max_dom
+restart,.false.,whether this run is a restart simulation,single entry
+restart_interval,1440,restart output file interval in minutes,single entry
+override_restart_intervals,.false.,".false. : uses all output intervals (including
+history) given by the wrfrst file
+.true. : uses restart output intervals
+given by namelist",single entry
+write_hist_at_0h_rst,.false.,".false. = no history file written at restart
+initial time (prevents overwriting original
+history file at this time); 
+.true. = history file written at the intial
+time of the restart",single entry
+output_ready_flag,.true.,"tells the model to write out an empty file
+with the name ""wrfoutReady_d<domain>;"" 
+useful in production runs so post-processing
+code can check on run completeness, 
+using this file",single entry
+force_use_old_data,.false.,".false. = model stops when it detects input
+data prior to version 4;
+.true. = allow input data prior to V4",single entry
+reset_simulation_start,.false.,"whether to overwrite the simulation start
+date with the forecast start time",single entry
+auxinput1_inname,"""met_em.d<domain>.<date>""","name of input file from WPS; only
+necessary if not using the default file names",single entry
+auxinput4_inname,"""wrflowinp_d<domain>""","name of input file for lower boundary file;
+created by real.exe when sst_update=1",single entry
+auxinput4_interval,360,"interval in mins for lower boundary file; 
+only used when sst_update=1",max_dom
+io_form_auxinput4,2,"I/O format for wrflowinp files; only used
+when sst_update=1 (2 = netCDF)",single entry
+io_form_history,2,"I/O format of history output file(s);
+
+=2 : netCDF
+
+=102 : split netCDF files, one per processor
+*note: must restart with same number of 
+processors
+
+= 1 : binary format; note: no supported
+post-processing software available
+
+= 4 : PHDF5; note: no supported post-
+processing software available
+
+= 5 : GRIB1
+
+= 10 : GRIB2
+
+= 11 : parallel netCDF",single entry
+io_form_restart,2,"I/O format of restart output files (wrfrst);
+
+=2 : netCDF
+
+=102 : split netCDF files, one per processor
+ *note: must restart with the same number 
+of processors",single entry
+io_form_input,2,"I/O format of input (met_em) files;
+
+=2 : netCDF
+
+=102 : split netCDF files, allows real.exe to
+read-in split met_em files, and write split 
+wrfinput files. ",single entry
+io_form_boundary,2,"I/O format of the wrfbdy file;
+
+=2 : netCDF
+
+= 4 : PHDF5; note: no supported 
+post-processing software available
+
+= 5 : GRIB1
+
+= 10 : GRIB2
+
+= 11 : parallel netCDF",single entry
+ncd_nofill,.true.,"when set to .true., only gives a single 'write'
+as opposed to 'write/read/write' sequence;
+could potentially improve I/O speed",single entry
+io_form_auxinput2,2,"IO format for input stream 2 data;
+
+=2 : netCDF
+
+=4 : PHD5
+
+=5 : GRIB1
+
+=10 : GRIB2
+
+=11 : pnetCDF",single entry
+diag_print,0,"option to print out time series of model
+diagnostics;
+
+=0 : no print
+
+=1 : domain-averaged 3-hourly hydrostatic 
+surface pressure tendency (Dpsfc/Dt), and 
+dry-hydrostatic column pressure 
+tendency (Dmu/Dt) added to the standard 
+output file
+
+=2 : option 1, plus domain-averaged rainfall, 
+sfc evaporation, and sensible and latent 
+heat fluxes",single entry
+debug_level,0,"giving this a larger value (50, 200, etc.) 
+increases debugging print-outs when 
+running. 
+NOTE: removed from default 
+namelists - rarely provides useful info
+and adds extra junk to standard 
+error/output files, making them difficult 
+to read and sometimes too large to write 
+– causing runtime crashes.",single entry
+auxhist2_outname,"""auxhist2_d<domain>_<date>""","file name for extra output when using
+auxhist2. Only the first part can be 
+changed 
+(e.g., ""rainfall_d<domain>_<date>"")",single entry
+auxhist2_interval,10,"interval (in mins) for output when using 
+auxhist2",max_dom
+io_form_auxhist2,,"output file format when using auxhist2
+=2 : netCDF
+=4 : PHD5
+=5 : GRIB1
+=10 : GRIB2
+=11 : pnetCDF",single entry
+frames_per_auxhist2,1000,"how many history output times are in
+each auxhist2 output file",max_dom
+auxinput11_interval,10,"interval (mins) for obs nudging input; 
+should be set at the same (or greater) 
+frequency as 'obs_ionf' (with the unit of
+coarse domain time step)",max_dom
+auxinput11_end_h,6,"end of the observation time (in hrs) when
+using obs nudging",max_dom
+nocolons,.false.,"set to .true. to replace colons with
+underscores in output file names",single entry
+The following 5 rows are specific to 3DVAR application,,,
+write_input,.false.,"set to .true. to write input-formatted data 
+as output for 3DVAR application",single entry
+inputout_interval,0,"interval (in mins) when using the 
+'write_input' option",max_dom
+input_outname,"""wrf_3dvar_input_d<domain>_<date>""",output file name from 3DVAR,single entry
+"inputout_begin_y
+inputout_begin_d
+inputout_begin_h
+inputout_begin_m
+inputout_begin_s",0,"beginning year, day, hour, minute, and
+second (respectively) to write 3DVAR data",max_dom
+"inputout_end_y
+inputout_end_d
+inputout_end_h
+inputout_end_m
+inputout_end_s",0,"ending year, day, hour, minute, and
+second (respectively) to write 3DVAR data",max_dom
+,,,
+all_ic_times,.false.,"set to .true. to output a 'wrfinput' file for
+all time periods",single entry
+adjust_output_times,.false.,adjust output times to the nearest hour,single entry
+output_diagnostics,0,"set to =1 to add 48 sfc diagnostic arrays
+(max/min/mean/std) in the specified
+time interval",single entry
+nwp_diagnostics,0,"set to =1 to add 'history_interval' 
+diagnostic fileds (10m wind sp, 2-5 km 
+max helicity, max vert. velocity in updraft
+and downdraft below 400mb, 2-5 km mean 
+vert. velocity, max column graupel;
+*must also turn on 'do_radar_ref'",single entry
+"The following options are specific to automatic moving nest application.
+WRF must have been compiled with nesting option 3.",,,
+input_from_hires,.false.,"set to .true. to use high-resolution terrain
+and landuse in the nests; this requires
+special input data, and WRF must be
+compiled with environment variable
+setting TERRAIN_AND_LANDUSE",max_dom
+rsmas_data_path,"""path-to-high-res-data-director""","path the directory when the high-res data
+can be found",single entry
+The following options are specific to the runtime I/O option,,,
+iofields_filename,"""my_iofields_list.txt""","option to output additional variables, or 
+remove variables from output; must create
+a text file (e.g., my_iofields_list.txt) in which
+variables to add/remove are declared.",max_dom
+ignore_iofields_warning,.true.,"the model will continue if an error is
+encountered in the user-specified file above; 
+set to .false. to abort the model if an error
+is encountered",single entry

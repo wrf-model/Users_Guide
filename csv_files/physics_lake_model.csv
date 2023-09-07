@@ -1,0 +1,11 @@
+sf_lake_physics,0,set to =1 to turn on the lake model,max_dom
+lakedepth_default,50,"lake depth (in meters); if no lake depth
+information is available in the input data, 
+this value is set to 50 m",max_dom
+lake_min_elev,5,"minimum elevation of lakes; can be used to
+determine whether a water point is a lake
+in the absence of a lake category; if the
+landuse type includes 'lake' (e.g., Modis_lake
+and USGS_LAKE), this variables is ignored",max_dom
+use_lakedepth,1,"option to use lake depth data provided by
+the geogrid program",max_dom

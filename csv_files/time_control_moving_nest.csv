@@ -1,0 +1,7 @@
+input_from_hires,.false.,"set to .true. to use high-resolution terrain
+and landuse in the nests; this requires
+special input data, and WRF must be
+compiled with environment variable
+setting TERRAIN_AND_LANDUSE",max_dom
+rsmas_data_path,"""path-to-high-res-data-director""","path the directory when the high-res data
+can be found",single entry

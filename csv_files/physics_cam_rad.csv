@@ -1,0 +1,12 @@
+cam_abs_freq_s,21600,"default CAM radiation clear sky longwave
+absorption calculation frequency (in secs); 
+recommend minimum value to speed-up
+scheme",single entry
+levsiz,1,"number of ozone data levels for CAM 
+radiation",single entry
+paerlev,1,"numer of aerosol data levels for CAM
+radiation",single entry
+cam_abs_dim1,1,"dimension for ""absnxt"" (absorption save
+array) in CAM radiation",single entry
+cam_abs_dim2,1,"dimension for ""abstot"" (2nd absorption
+save array) in CAM radiation",single entry

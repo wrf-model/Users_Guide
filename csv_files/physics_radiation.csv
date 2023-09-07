@@ -1,0 +1,186 @@
+ra_lw_physics,-1,"longwave radiation option; all domains
+should be set to the same value;
+
+=0 : no longwave radiation
+
+=1 : RRTM
+
+=3 : CAM; if using restarts, they must be
+at 6-hourly intervals; must set levsiz, 
+paerlev, and cam_abs_dim1/2
+
+=4 : RRTMG
+
+=5 : Goddard; updated in V4.1
+
+=7 : FLG (UCLA)
+
+=14 : RRTMG-K; to use this option, WRF
+must be compiled with configuration
+setting ""-DBUILD_RRTMK = 1"" (modify 
+in configure.wrf)
+
+=24 : fast RRTMG for GPU and MIC
+
+=31 : Earth Held-Suarez forcing
+
+=99 : GFDL (Eta); semi-supported; must
+use co2tf=1",max_dom
+ra_sw_physics,,"shortwave radiation option; all domains
+should be set to the same value;
+
+=0 : no shortwave radiation
+
+=1 : Dudhia; must use a ptop > 50mb
+
+=2 : old Goddard
+
+=3 : CAM; if using restarts, they must be
+at 6-hourly intervals; must set levsiz, 
+paerlev, and cam_abs_dim1/2
+
+=4 : RRTMG
+
+=5 : Goddard; updated in V4.1
+
+=7 : FLG (UCLA)
+
+=14 : RRTMG-K; to use this option, WRF
+must be compiled with configuration
+setting ""-DBUILD_RRTMK = 1"" (modify 
+in configure.wrf)
+
+=24 : fast RRTMG for GPU and MIC
+
+=31 : Earth Held-Suarez forcing
+
+=99 : GFDL (Eta); semi-supported; must
+use co2tf=1",max_dom
+radt,0,"minutes between radiation physics calls; 
+recommend 1 minute per km of dx (e.g., 
+set to 10 for a 10 km grid); set to the same
+value for all domains",max_dom
+swint_opt,0,"interpolation options for shortwave 
+radiation;
+
+=0 : off
+
+=1 : turn on interpolation of shortwave 
+radiation based on the updated solar 
+zenith angle between radiation calls
+
+=2 : activates FARMS to allow simulation
+of the broadband solar radiation model 
+every time step",single entry
+couple_farms,.false.,"set to =.true. to use FARMS shortwave
+radiation to drive the LSM; when set to 
+.false., uses shortwave radiation from
+ra_sw_physics",single entry
+ra_call_offset,0,"set to =1 to turn on radiation offset to call
+radiation just before output time, instead
+of after output time",single entry
+co2tf,1,"CO2 transmission function flag for GFDL
+radiation only, which allows generation of
+CO2 function internally",single entry
+cldovrlp,2,"cloud overlapping option for RRTMG 
+radiation;
+
+=1 : random
+
+=2 : maximum random
+
+=3 : maximum
+
+=4 : exponential
+
+=5 : exponential-random; new since V4.4",single entry
+idcor,0,"decorrelation length flag for use with
+""cldovrlp=4 or 5;"" new since V4.4;
+
+=0 : constant decorrelation length 2500 m
+
+=1 : latitude-varying decorrelation length",single entry
+ra_sw_eclipse,0,"set to =1 to turn on eclipse effect on
+shortwave radiation; only works with
+RRTMG, Goddard, old Goddard, and Dudhia
+radiation schemes",single entry
+ghg_input,1,"option to read CAMtr_volume_mixing_ratio
+files of greenhouse gas values; new since
+V4.4;
+
+=0 : do not read in annual data; for constant 
+values for backward compatibility (prior to 
+V4.4)
+
+=1 : read in time-dependent data for CO2, 
+N2O, CH4, CFC11, and CFC12; default is 
+SSP 2 with RCP 4.5 -> SSP245; only works 
+with ra_lw_physics=1,2,4,24 and 
+ra_sw_physics=3,4,24",single entry
+03input,2,"ozone input option for RRTMG radiation;
+
+=0 : use the profile inside RRTMG scheme
+
+=2 : use CAM ozone data (from 
+""ozone.formatted"" file found in run/ or 
+test/em_real directory)",single entry
+aer_opt,0,"aerosol input option for RRTMG radiation;
+
+=0 : off
+
+=1: use Tegen (1997) climatology
+
+=2 : use J. A. Ruiz-Arias method; see other 
+""aer_*"" options
+
+=3 : use Thompson water/ice-friendly
+climatological aerosol",single entry
+alevsiz,1,"number of vertical levels in aerosol data; 
+value is set automatically",single entry
+no_src_types,1,"number of aerosol species in Tegen global
+aerosol data; organic and black carbon, 
+sea salt, sulfate, dust, and stratospheric
+aerosol (volcanic ash - currently 0); value
+is set automatically",single entry
+use_rap_aero_icbc,.false.,"set to =.true. to ingest real-time data
+containing aerosols; new since V4.4",single entry
+qna_update,0,"set to =1 to update time-varying surface 
+aerosol emission from climatology or
+real-time data when using ""mp_physics=28"";
+use with input file ""wrfqnainp_d0""; must
+set auxinput17_interval and 
+io_form_auxinput17; new since V4.4",single entry
+wif_fire_emit,.false.,"set to =.true. to include biomass burning
+organic and black carbon aerosols with
+""mp_physics=28;"" new since V4.4",single entry
+wif_fire_inj,1,"turns on vertical distribution of biomass
+burning emissions when using
+""mp_physics=28;"" new since V4.4",max_dom
+icloud,1,"cloud effect to the optical depth in radiation
+and controls the cloud fraction options; only
+works with ra_sw/lw_physics=1 or 4;
+
+=0 : no cloud effect
+
+=1 : with cloud effect; must use cloud 
+fraction option 1 (Xu-Randall method)
+
+=2 : with cloud effect; must use cloud
+fraction option 2 (0/1 based on 
+threshold)
+
+=3 : with cloud effect; must use cloud 
+fraction option 3 (Sundqvist et al., 1989
+method)",single entry
+insert_init_cloud,.false.,"set to =.true. to estimate initial model cloud
+when using ""icloud=3;"" cold start only",single entry
+swrad_scat,1,"scattering tuning parameter; 
+default is 1.e\ :sup:`-5` m\ :sup:`2` kg\ :sup:`-1`; 
+increase for more scattering;
+only works with ra_sw_physics=1",single entry
+slope_rad,0,"set to =1 to turn on slope-dependent
+radiation for ra_sw_physics",max_dom
+topo_shading,0,"applies neighboring-point shadow effects
+for ra_sw_physics",max_dom
+shadlen,25000,"maximum length (in m) of orographic shadow
+; only works when topo_shading=1",single entry

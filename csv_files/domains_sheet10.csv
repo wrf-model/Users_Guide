@@ -1,0 +1,42 @@
+"s_we
+
+s_sn
+
+s_vert",1,"start index in x (east-west), y (south-
+north), and z (vertical) directions, 
+respectively. DO NOT change these values",max_dom
+"e_we
+
+e_sn",32,"end index in x (east-west), and y (south-
+north) direction, respectively; staggered
+dimension ",max_dom
+e_vert,31,"end index in z (vertical) direction; 
+staggered dimension for full levels (most
+variables are on unstaggered levels); 
+vertical dimensions must be the same
+for all domains",max_dom
+"dx
+
+dy",200,"grid length (resolution) in the x and y
+directions (in meters)",single entry
+smooth_option,2,"smoothing option for parent domain; 
+feedback must be turned on to use this
+option (feedback=1);
+
+=0 : turned off
+
+=1 : 1-2-1 smoothing
+
+=2 : smoothing-desmoothing",single entry
+wif_input_opt,0,"option for additional data processing when
+using 'mp_physics=28;
+
+=1 : to process the Water Ice Friendly
+Aerosol input from metgrid; see 
+'run/README.namelist'for additional 
+info
+
+=2 : (new since V4.4) use black carbon
+aerosol category and its radiative effect. 
+Must include file QNWFA_QNIFA_
+QNBCA_SIGMA_MONTHLY.dat during WPS",single entry

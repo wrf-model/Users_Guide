@@ -1,0 +1,75 @@
+grid_fdda,0,"option to turn on grid nudging;
+
+=0 : off
+
+=1 : grid analysis nudging on
+
+=2 : spectral analysis nudging on",max_dom
+gfdda_inname,"""wrffdda_d<domain>""","defined name of grid nudging input file 
+that is produced when running real.exe",single entry
+gfdda_interval_m,0,"time interval (in mins) between analysis
+times",max_dom
+gfdda_end_h,0,"time (in hours) from the initial forecast
+time, to stop nudging",max_dom
+io_form_gfdda,2,"output format for grid analysis data;
+
+=2 : NetCDF
+
+=4 : PHD5
+
+=5 : GRIB1
+
+=10 : GRIB2
+
+=11 : pNetCDF",single entry
+fgdt,0,"calculation frequency (in mins) for analysis
+nudging; 0=every time step, which is
+recommended",max_dom
+if_no_pbl_nudging_uv,0,"set to =1 to turn off nudging of u and v in
+the PBL",max_dom
+if_no_pbl_nudging_t,0,"set to =1 to turn off nudging of temperature
+in the PBL",max_dom
+if_no_pbl_nudging_q,0,"set to =1 to turn off nudging of qvapor in
+the PBL",max_dom
+guv,0,"nudging coefficient for u and v (s\ :sup:`-1`); a 
+reasonable value is 0.0003",max_dom
+gt,0,"""nudging coefficient for temperature (s\ :sup:`-1`); 
+a reasonable value is 0.0003""",max_dom
+gq,0,"nudging coefficient for qvapor (s\ :sup:`-1`); a 
+reasonable value is 0.0003",max_dom
+if_ramping,0,"the method for ending nudging;
+
+=0 : nudging ends as a step function
+
+=1 : nudging ramps down at the end of
+the period",single entry
+dtramp_min,0,timestep (in mins) for ramping function,single entry
+grid_sfdda,0,"type of surface grid nudging;
+
+=0 : none
+
+=1 : nudging for selected surface fields
+
+=2 : FASDAS (Flux-Adjusted Surface Data
+Assimilation System) nudging",max_dom
+sgfdda_inname,"""wrfsfdda_d<domain>""","defined name of surface nudging input file 
+that comes from the OBSGRID program ",single entry
+sgfdda_interval_m,0,"time interval (in mins) between surface 
+analysis times",max_dom
+sgfdda_end_h,0,"time (in hours) from the initial forecast
+time, to stop surface nudging",max_dom
+io_form_sgfdda,2,"surface analysis output format;
+
+=2 : NetCDF",single entry
+guv_sfc,0,"surface nudging coefficient for u and v (s\ :sup:`-1`);
+a reasonable value is 0.0003",max_dom
+gt_sfc,0,"surface nudging coefficient for temperature
+ (s\ :sup:`-1`); a reasonable value is 0.0003",max_dom
+gq_sfc,0,"surface nudging coefficient for qvapor (s\ :sup:`-1`);
+a reasonable value is 0.00001",max_dom
+rinblw,0,"radius of influence used to determine the
+confidence (or weights) for analysis, which
+is based on the distance between the grid
+point to the nearest observation; analysis
+for grid points without nearvy observations
+is used at a reduced weight",max_dom
