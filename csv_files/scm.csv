@@ -1,0 +1,37 @@
+scm_force,0,set to =1 to turn on single column forcing
+scm_force_dx,4000,DX for SCM forcing (in meters)
+num_force_layers,8,number of SCM input forcing layers
+scm_lu_index,2,"SCM landuse category; 2= dryland, 
+cropland, and pasture; others can be found 
+in the LANDUSE.TBL file in the run/ or
+test/em_real/ directory"
+scm_isltyp,4,"SCM soil category; 4= silt loam; others can 
+be found in the SOILPARM.TBL file in the 
+run/ or test/em_real/ directory"
+scm_vegfra,50,SCM vegetation fraction (%)
+scm_canwat,0,SCM canopy water (kg m-2)
+scm_lat,36.605,SCM latitude
+scm_lon,-97.485,SCM longitude
+scm_th_adv,.true.,turns on theta advection in SCM
+scm_wind_adv,.true.,turns on wind advection in SCM
+scm_qv_adv,.true.,turns on moisture advection in SCM
+scm_vert_adv,.true.,turns on vertical advection in SCM
+scm_ql_adv,.false.,"set to =.true. to turn on liquid advection 
+in SCM"
+scm_force_skintemp,0,"set to =1 to turn on SCM forcing by 
+skin temp"
+scm_force_flux,0,"set to =1 to turn on SCM forcing by 
+surface fluxes"
+num_force_soil_layers,5,number of SCM soil forcing layers
+scm_soilt_force,.false.,"set to =.true. to turn on soil temperature 
+forcing in SCM"
+scm_soilq_force,.false.,"set to =.true. to turn on moisture forcing 
+in SCM"
+scm_force_th_largescale,.false.,"set to =.true. to turn on large-scale theta 
+forcing in SCM"
+scm_force_qv_largescale,.false.,"set to =.true. to turn on large-scale qv 
+forcing in SCM"
+scm_force_ql_largescale,.false.,"set to =.true. to turn on large-scale ql 
+forcing in SCM"
+scm_force_wind_largescale,.false.,"set to =.true. to turn on large-scale wind
+forcing in SCM"

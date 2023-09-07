@@ -1,0 +1,14 @@
+aercu_opt,0,"option to control aerosol interaction;
+
+=0 : no aerosol interaction
+
+=1 : aerosol interaction with only MSKF
+
+=2 : aerosol interaction with both MSKF 
+and Morrison",single entry
+aercu_fct,1.0,factor to multiply with aerosol amount ,single entry
+no_src_types_cu,1,"number of aerosol species in global aerosol
+data (10 for CESM input); value is set
+automatically",single entry
+alevsiz_cu,1,"number of levels in global aerosol data (30
+for CESM input); value is set automatically",single entry

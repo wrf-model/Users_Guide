@@ -1,0 +1,9 @@
+nio_tasks_per_group,0,"set to a value >0 to use I/O quilting;
+
+=0 : no quilting
+
+>0 : number of processors used for IO
+quilting per IO group",single entry  
+nio_groups,1,"number of I/O groups to use for I/O quilting;
+set to a higher value for nesting I/O or
+history or restart I/O",single entry

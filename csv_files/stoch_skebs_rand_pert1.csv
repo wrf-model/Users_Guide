@@ -1,0 +1,22 @@
+rand_perturb,0,"set to =1 to create a random perturbation
+field",max_dom
+lengthscale_rand_pert,500000,perturbation correlation lengthscale (meters),max_dom
+timescale_rand_pert,21600.0,"temporal decorrelation of random field
+(in seconds)",max_dom
+gridpt_stddev_rand_pert,0.03,"standard deviation of random perturbation
+field at each grid point",max_dom
+stddev_cutoff_rand_pert,3.0,"cutoff tails of perturbation pattern above
+this threshold standard deviation",max_dom
+rand_pert_vertstruc,0,"vertical structure for random perturbation
+field;
+
+=0 : constant
+
+=1 : random phase with tilt",single entry
+iseed_rand_pert,17,"seed for random number stream; this is 
+combined with seed nens, signifying 
+ensemble member number and initial 
+start time to ensure different random 
+number streams are created for forecasts 
+starting from different initial times and for 
+different ensemble members",single entry

@@ -1,0 +1,39 @@
+dfi_opt,0,"digital filter initialization option; supports
+nesting with no feedback;
+
+=0 : no DFI
+
+=1 : digital filter launch (DFL)
+
+=2 : diabatic DFI (DDFI)
+
+=3 : twice DFI (TDFI); recommended",single entry
+dfi_nfilter,7,"type of digital filter to use when dfi_opt>0;
+
+=0 : uniform
+
+=1 : Lanczos
+
+=2 : Hamming
+
+=3 : Blackman
+
+=4 : Kaiser
+
+=5 : Potter
+
+=6 : Dolph window
+
+=7 : Dolph; recommended
+
+=8 : recursive high-order",single entry
+dfi_write_filtered_input,.true.,"when set to =.true., writes a wfinput file
+with a filtered model state before beginning
+a forecast",single entry
+dfi_write_dfi_history,.false.,"set to =.true. to write wrfout files during
+filtering integration",single entry
+dfi_cutoff_seconds,3600,"cutoff period (in seconds) for the filter; 
+should not be longer than the filter window",single entry
+dfi_time_dim,1000,"maximum number of time steps for the
+filtering period; this value can be larger
+than necessary",single entry

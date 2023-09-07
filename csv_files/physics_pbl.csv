@@ -1,0 +1,153 @@
+bl_pbl_physics,,"boundary layer option; the same value 
+should be used for all domains (except when
+running an LES simulation);
+
+=0 : no boundary layer
+
+=1 : YSU; only works with sf_sfclay_physics=1
+
+=2 : MYJ (Eta) TKE; only works with
+sf_sfclay_physics=2
+
+=4 : QNSE-EDMF; only works with
+sf_sfclay_physics=4
+
+=5 : MYNN 2.5 level TKE; only works with
+sf_sfclay_physics=1,2,5
+
+=6 : MYNN 3rd level TKE; only works with
+sf_sfclay_physics=5
+
+=7 : ACM2 (Pleim); only works with 
+sf_sfclay_physics=1 or 7
+
+=8 : BouLac TKE; only works with
+sf_sfclay_physics=1 or 2
+
+=9 : Bretherton-Park/UW TKE; only works
+with sf_sfclay_physics=1 or 2
+
+=10 : TEMF; only works with 
+sf_sfclay_physics=10
+
+=11 : Shin-Hong 'scale-aware'
+
+=12 : GBM TKE; only works with
+sf_sfclay_physics=1
+
+=16 : EEPS; only works with
+sf_sfclay_physics=1,5,91
+
+=17 : KEPS
+
+=99 : MRF",max_dom
+mfshconv,1,"use day-time EDMF for QNSE; set to =0 to
+turn off",max_dom
+bldt,0,"minutes between boundary-layer physics 
+calls; recommend =0 (call every time step)
+for all domains",max_dom
+topo_wind,0,"topographic surface wind correction; 
+requires extra input from geogrid; only
+works with bl_pbl_physics=1;
+
+=0 : off
+
+=1 : Jimenez method
+
+=2 : UW method",single entry
+bl_mynn_tkebudget,0,adds MYNN TKE budget terms to output,max_dom
+bl_mynn_tkeadvect,.false.,"set to =.true. to turn on MYNN TKE 
+advection to couple subgrid-scale clouds
+from MYNN PBL to radiation schemes",max_dom
+bl_mynn_cloudmix,1,"activate mixing of qc and qi in MYNN; 
+qnd and qni are mixed when
+ ""scalar_pblmix=1""",max_dom
+bl_mynn_mixlength,1,"option to change mixing length formulation
+in MYNN;
+
+=0 : original; as in Nakanishi and Niino, 2009
+
+=1 : RAP/HRRR; including BouLac in free 
+atmosphere
+
+=2 : experimental; includes cloud-specific
+mixing length and a scale-aware mixing 
+length; following Ito et al., 2015, BLM; 
+this option is well-tested with EDMF options",single entry
+bl_mynn_cloudpdf,2,"option to switch to different cloud PDFs
+to represent subgrid clouds in MYNN;
+ 
+=0 : original; Sommeria and Deardorf, 1977
+
+=1 : Kuwano et al., 2010; similar to option 0, 
+but uses resolved scale gradients, as opposed 
+to higher order moments
+
+=2 : Chaboureau and Bechtold, 2002 (JAS), 
+with mods",single entry
+bl_mynn_edmf,1,"option to activate mass-flux scheme in
+MYNN;
+
+=0 : regular MYNN
+
+=1 : for StEM
+
+=2 : for TEMF",max_dom
+bl_mynn_edmf_mom,1,"option to activate momentum transport
+in MYNN; assuming ""bl_mynn_edmf > 0""",max_dom
+bl_mynn_edmf_tke,0,"set to =1 to activate TKE transport
+in MYNN; assuming ""bl_mynn_edmf > 0""",max_dom
+scalar_pblmix,0,"set to =1 to mix scalar fields consistent 
+with PBL option (exch_h)",max_dom
+tracer_pblmix,1,"mix tracer fields consistent with PBL 
+option (exch_h)",max_dom
+shinhong_tke_diag,1,"Use diagnostic TKE and mixing length from 
+Shin-Hong PBL",max_dom
+opt_thcnd,1,"how to treat thermal conductivity in 
+Noah LSM;
+
+=1 : original
+
+=2 : McCumber and Pielke for silt loam and 
+sandy loam",single entry
+sf_surface_mosaic,0,"set to =1 to use mosaic landuse categories 
+for Noah LSM",single entry
+mosaic_lu,0,"set to =1 to specify landuse parameters
+based on a mosaic approach; only works
+with RUC LSM (sf_surface_physics=3)",single entry
+mosaic_soil,0,"set to =1 to specify soil parameters based
+on a mosaic approach; only works with
+RUC LSM (sf_surface_physics=3)",single entry
+mosaic_cat,3,"number of mosaid landuse categories
+in a grid cell when ""sf_surface_mosaic=1""",single entry
+grav_settling,0,"gravitational settling of fog/cloud droplets;
+
+=0 : no settling
+
+=1 : settling from Dyunkerke, 1991 in 
+atmosphere at the surface
+
+=2 : use Fogdes vegetation and wind speed 
+dependent (Katata et al., 2008) at the surface, 
+and Dyunkerke for the atmosphere",max_dom
+ysu_topdown_pblmix,1,turns on top-down radiation-driven mixing,single entry
+isfflx,1,"heat and moisture fluxes from the surface
+for real-data cases when a PBL option is used;
+only works with sf_sfclay_physics=1,5,7,11;
+
+=0 : fluxes are on
+
+=1 : fluxes are off
+
+when ""bl_pbl_physics=0,"" option controls 
+surface fluxes when ""diff_opt=2"" and 
+""km_opt=3;"" 
+=0 : constant fluxes defined by 
+""tke_drag_coefficient"" and 
+""tke_heat_flux""
+
+=1 : use model-computed u and heat and
+moisture fluxes
+
+=2 : use model-computed u* and specified
+heat flux by ""tke_heat_flux""",single entry

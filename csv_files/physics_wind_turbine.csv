@@ -1,0 +1,10 @@
+windfarm_opt,0,"set to =1 to turn on the effects of wind 
+turbines in the atmospheric evolution",max_dom
+windfarm_ij,0,"specifies to type of coordinate to use for
+wind turbine locations;
+
+=0 : turbine coordinates are defined in
+terms of lat-lon
+
+=1 : turbine coordinates are defined in
+terms of grid points (i,j)",single entry

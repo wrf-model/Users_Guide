@@ -1,0 +1,111 @@
+obs_nudge_opt,0,"set to =1 to turn on observational nudging; 
+must also set auxinput11_invterval and 
+auxinput11_end_h under &time_control in
+namelist.input",max_dom
+max_obs,0,"maximum number of observations used
+for a domain during any given time window",
+fdda_start,0,observational nudging start time (in mins),max_dom
+fdda_end,0,observational nudging end time (in mins),max_dom
+obs_nudge_wind,0,set to =1 to turn on wind nudging,max_dom
+obs_coef_wind,0,nudging coefficient for wind (s\ :sup:`-1`),max_dom
+obs_nudge_temp,0,set to =1 to turn on temperature nudging,max_dom
+obs_coef_temp,0,nudging coefficient for temperature (s\ :sup:`-1`),max_dom
+obs_nudge_mois,0,"set to =1 to turn on vapor mixing ratio
+nudging",max_dom
+obs_coef_mois,0,"nudging coefficient for vapor mixing
+ratio (s\ :sup:`-1`)",max_dom
+obs_rinxy,0,horizontal radius of influence (in km),max_dom
+obs_rinsig,0,vertical radius of influence (in eta),single entry
+obs_twindo,0,"half-period time window over which an 
+observation is used for nudging (in hours)",max_dom
+obs_npfi,0,"frequency in coarse grid timesteps for
+diagnostic prints",single entry
+obs_ionf,1,"frequency in coarse grid timesteps for
+observational input and error calculation",max_dom
+obs_idynin,0,"for dynamic initialization, turns on 
+ramping-down function to gradually turn
+off FDDA before the pure forecast",single entry
+obs_dtramp,0,"time period (in mins) over which the 
+nudging is ramped down from one to zero",single entry
+obs_prt_max,1000,"maximum allowed obs entries in diagnostic 
+printout",single entry
+obs_prt_freq,1000,"frequency in observation index for 
+diagnostic printout",max_dom
+obs_ipf_in4dob,.false.,"set to =.true. to print observational input 
+diagnostics",single entry
+obs_ipf_errob,.false.,"set to =.true. to print observational error 
+diagnostics",single entry
+obs_ipf_nudob,.false.,"set to =.true. to print observational nudging 
+diagnostics",single entry
+obs_ipf_init,.true.,"enables observational printed warning 
+messages",single entry
+obs_no_pbl_nudge_uv,0,"set to =1 to turn off wind nudging within 
+the PBL",max_dom
+obs_no_pbl_nudge_t,0,"set to =1 to turn off temperature nudging 
+within the PBL",max_dom
+obs_no_pbl_nudge_q,0,"set to =1 to turn off moisture nudging within 
+the PBL",max_dom
+"obs_nudgezfullr1_uv
+obs_nudgezfullr1_t
+obs_nudgezfullr1_q",50,"vertical influence of full weight height for 
+lowest model level observations, PBL  
+regime 1, winds (uv), temperature (t), and
+moisture (q)",single entry
+"obs_nudgezrampr1_uv
+obs_nudgezrampr1_t
+obs_nudgezrampr1_q",50,"vertical influence of ramp-to-zero height 
+for lowest model level observations, 
+regime 1, winds (uv), temperature (t), and
+moisture (q)",single entry
+"obs_nudgezfullr2_uv
+obs_nudgezfullr2_t
+obs_nudgezfullr2_q",50,"Vertical influence of full weight height for 
+lowest model level observations, regime 2, 
+winds (uv), temperature (t), and moisture (q)",single entry
+"obs_nudgezrampr2_uv
+obs_nudgezrampr2_t
+obs_nudgezrampr2_q",50,"vertical influence of ramp-to-zero height 
+for lowest model level observations, 
+regime 2, winds (uv), temperature (t), and
+moisture (q)",single entry
+"obs_nudgezfullr4_uv
+obs_nudgezfullr4_t
+obs_nudgezfullr4_q",-5000,"Vertical influence of full weight height for 
+lowest model level observations, regime 4, 
+winds (uv), temperature (t), and
+moisture (q)",single entry
+"obs_nudgezrampr4_uv
+obs_nudgezrampr4_t
+obs_nudgezrampr4_q",50,"vertical influence of ramp-to-zero height 
+for lowest model level observations, 
+regime 4, winds (uv), temperature (t), and
+moisture (q)",single entry
+obs_nudgezfullmin,50,"minimum depth (in meters) through which 
+the vertical influence function remains 1.0",single entry
+obs_nudgezrampmin,50,"minimum depth (in meters) through which 
+the vertical influence function decreases 
+from 1 to 0",single entry
+obs_nudgezmax,3000,"max depth (in meters) in which vertical 
+influence function is non-zero",single entry
+obs_sfcfact,1.0,"scale factor applied to the time window 
+for surface observations",single entry
+obs_sfcfacr,1.0,"scale factor applied to horizontal radius 
+of influence for surface observations",single entry
+obs_dpsmx,7.5,"max pressure change ( in cb) allowed within 
+the horizontal radius of influence",single entry
+obs_sfc_scheme_horiz,0,"horizontal spreading scheme for surface 
+observations;
+
+=0 : WRF scheme
+
+=1 : MM5 scheme",single entry
+obs_sfc_scheme_vert,0,"vertical spreading scheme for surface 
+observations;
+
+=0 : regime vif scheme
+
+=1 : original (simple) scheme",single entry
+obs_max_sndng_gap,20,"max allowed pressure gap (in cb) between 
+soundings for interpolation",single entry
+obs_scl_neg_qv_innov,0,"set to =1 to prevent nudging toward 
+negative Qv",single entry

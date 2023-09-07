@@ -1,0 +1,20 @@
+moist_mix2_off,.false.,"set to =.true. to deactivate 2nd-order 
+horizontal mixing for moisture",max_dom
+chem_mix2_off,.false.,"set to =.true. to deactivate 2nd-order 
+horizontal mixing for chem species",max_dom
+tracer_mix2_off,.false.,"set to =.true. to deactivate 2nd-order 
+horizontal mixing for tracers",max_dom
+scalar_mix2_off,.false.,"set to =.true. to deactivate 2nd-order 
+horizontal mixing for scalars",max_dom
+tke_mix2_off,.false.,"set to =.true. to deactivate 2nd-order 
+horizontal mixing for TKE",max_dom
+moist_mix6_off,.false.,"set to =.true. to deactivate 6th-order 
+horizontal mixing for moisture",max_dom
+chem_mix6_off,.false.,"set to =.true. to deactivate 6th-order 
+horizontal mixing for chem species",max_dom
+tracer_mix6_off,.false.,"set to =.true. to deactivate 6th-order 
+horizontal mixing for tracers",max_dom
+scalar_mix6_off,.false.,"set to =.true. to deactivate 6th-order 
+horizontal mixing for scalars",max_dom
+tke_mix6_off,.false.,"set to =.true. to deactivate 6th-order 
+horizontal mixing for TKE",max_dom

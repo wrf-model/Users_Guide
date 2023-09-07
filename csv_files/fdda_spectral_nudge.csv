@@ -1,0 +1,64 @@
+fgdtzero,0,"set to =1 to nudge tendencies to zero in
+between fdda calls",max_dom
+if_no_pbl_nudging_ph,0,"set to =1 to turn off nudging of perturbation
+geopotential (ph) in the PBL",max_dom
+if_zfac_uv,0,"determines which layers nudging will occur 
+for u and v;
+
+=0 : nudge in all layers
+
+=1 : limit nudging to levels above 
+k_zfac_uv  ",max_dom
+k_zfac_uv,0,"below this model level, nudging is turned 
+off for u and v",max_dom
+dk_zfac_uv,1,"depth (in k dimension) between 
+k_zfac_uv to dk_zfac_uv where nudging
+increases linearly to full strength",max_dom
+if_zfac_t,0,"determines which layers nudging will occur 
+for temperature;
+
+=0 : nudge temperature in all layers
+
+=1 : limit nudging to levels above 
+k_zfac_t  ",max_dom
+k_zfac_t,0,"below this model level, nudging is turned 
+off for temperature",max_dom
+dk_zfac_t,1,"depth (in k dimension) between 
+k_zfac_t to dk_zfac_t where nudging
+increases linearly to full strength",max_dom
+if_zfac_ph,0,"determines which layers nudging will occur 
+for perturbation geopotential (ph);
+
+=0 : nudge ph in all layers
+
+=1 : limit nudging to levels above 
+k_zfac_tph ",max_dom
+k_zfac_ph,0,"below this model level, nudging is turned 
+off for perturbation geopotential (ph)",max_dom
+dk_zfac_ph,1,"depth (in k dimension) between 
+k_zfac_ph to dk_zfac_ph where nudging
+increases linearly to full strength",max_dom
+if_zfac_q,0,"determines which layers nudging will occur 
+for qvapor;
+
+=0 : nudge qvapor in all layers
+
+=1 : limit nudging to levels above 
+k_zfac_tq ",max_dom
+k_zfac_q,0,"below this model level, nudging is turned 
+off for qvapor",max_dom
+dk_zfac_q,1,"depth (in k dimension) between 
+k_zfac_q to dk_zfac_q where nudging
+increases linearly to full strength",max_dom
+gph,0,"nudging coefficient for perturbation
+geopotential (ph); a reasonable value is
+0.0003",single entry
+ktrop,0,"option to cap spectral nudging of potential
+temperature and water vapor mixing ratio
+at a user-defined layer above the PBL;
+nominally selected to represent the
+tropopause",single entry
+xwavenum,0,"top wave number to nudge in the x-direction;
+a reasonable value is 3",max_dom
+ywavenum,0,"top wave number to nudge in the y-direction;
+a reasonable value is 3",max_dom

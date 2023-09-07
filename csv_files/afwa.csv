@@ -1,0 +1,16 @@
+afwa_diag_opt,0,set to =1 to turn on AFWA diagnostics,max_dom
+afwa_ptype_opt,0,"set to =1 to turn on precipitation type
+option",max_dom
+afwa_vil_opt,0,set to =1 to turn on vertical int liquid option,max_dom
+afwa_radar_opt,0,set to =1 to turn on radar option,max_dom
+afwa_severe_opt,0,set to =1 to turn on severe weather option,max_dom
+afwa_icing_opt,0,set to =1 to turn on icing option,max_dom
+afwa_vis_opt ,0,set to =1 to turn on visibility option,max_dom
+afwa_cloud_opt,0,set to =1 to turn on cloud option,max_dom
+afwa_therm_opt ,0,set to =1 to turn on thermal indices option,max_dom
+afwa_turb_opt,0,set to =1 to turn on turbulence option,max_dom
+afwa_buoy_opt,0,set to =1 to turn on buoyancy option,max_dom
+afwa_ptype_ccn_tmp,264.15,"CCN temperature for precipitation type 
+calculation",single entry
+afwa_ptype_tot_melt,50,"total melting energy for precipitation type 
+calculation",single entry

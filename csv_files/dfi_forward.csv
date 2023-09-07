@@ -1,0 +1,18 @@
+dfi_fwdstop_year,2004,"4-digit year of stop time for forward DFI 
+integration",single entry
+dfi_fwdstop_month,3,"2-digit month of stop time for forward DFI 
+integration",single entry
+dfi_fwdstop_day,13,"2-digit day of stop time for forward DFI 
+integration",single entry
+dfi_fwdstop_hour,12,"2-digit hour of stop time for forward DFI 
+integration",single entry
+dfi_fwdstop_minute,30,"2-digit minute of stop time for forward DFI 
+integration",single entry
+dfi_fwdstop_second,0,"2-digit second of stop time for forward DFI 
+integration",single entry
+dfi_savehydmeteors,0,"Option for radar data assimilation:
+
+=0 : sets hydrometeors to 0 and lets 
+them spin up in DFI
+
+=1 : keeps hydrometeors unchanged",single entry

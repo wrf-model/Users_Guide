@@ -1,0 +1,46 @@
+seaice_threshold,100,"if skin temperature (TSK) is < this value, water
+points are changed to sea ice; only works with
+sf_surface_physics=1,2,3,4,8
+
+a) if water point + sf_surface_physics=1 : 
+sets to land point and permanent ice
+
+b) if water point + sf_surface_physics=2 : 
+sets to land point, permanent ice, sets 
+temperature from 2m to surface, and sets
+'smois' and 'sh2o'",single entry
+fractional_seaice,0,"set to =1 to treat seaice as a fractional field; 
+only works with sf_sfclay_physics=1,2,3,4,5,7,91; 
+must also set seaice_threshold=0; if set to 0, 
+uses flag for ice or no ice",single entry
+seaice_albedo_opt,0,"option to set albedo over sea ice;
+
+=0 : uses constant value from namelist
+option ""seaice_albedo_default""
+
+=1 : function of air temperature, skin
+temperature, and snow
+
+=2 : read-in from input variable ALBSI",single entry
+seaice_albedo_default,0.65,"default value of seaice albedo when
+seaice_albedo_opt=0",single entry
+seaice_snowdepth_opt,0,"method for how snow depth on seaice is
+treated;
+
+=0 :  bounded by ""seaice_snowdepth_min""
+and ""seaice_snowdepth_max""
+
+=1 : read-in from input array SNOWSI 
+(bounded by ""seaice_snowdepth_min""
+and ""seaice_snowdepth_max"")",single entry
+seaice_snowdepth_min,0.001,minimum snow depth (in meters) on sea ice,single entry
+seaice_snowdepth_max,1.e10,"maximum allowed accumulation of snow
+(in meters) on sea ice",single entry
+seaice_thickness_opt,0,"seaice thickness method;
+
+=0 : uniform value taken from namelist
+variable ""seaice_thickness_default""
+
+=1 : read-in from input variable ICEDEPTH",single entry
+seaice_thickness_default,3.0,"default value of seaice thickness when
+seaice_thickness_opt=0",single entry

@@ -1,0 +1,18 @@
+wrf_core,ARW,A character string set to either ARW or NMM that tells the WPS which dynamical core the input data are being prepared for
+max_dom,1,"An integer specifying the total number of domains (nests), including the parent domain, in the simulation"
+start_year,no default,A list of MAX_DOM 4-digit integers specifying the starting UTC year of the simulation for each nest
+start_month,no default,A list of MAX_DOM 2-digit integers specifying the starting UTC month of the simulation for each nest
+start_day,no default,A list of MAX_DOM 2-digit integers specifying the starting UTC day of the simulation for each nest
+start_hour,no default,A list of MAX_DOM 2-digit integers specifying the starting UTC hour of the simulation for each nest
+end_year,no default,A list of MAX_DOM 4-digit integers specifying the ending UTC year of the simulation for each nest
+end_month,no default,A list of MAX_DOM 2-digit integers specifying the ending UTC month of the simulation for each nest
+end_day,no default,A list of MAX_DOM 2-digit integers specifying the ending UTC day of the simulation for each nest
+end_hour,no default,A list of MAX_DOM 2-digit integers specifying the ending UTC hour of the simulation for each nest
+start_date,no default,"A list of MAX_DOM character strings of the form ‘YYYY-MM-DD_HH:mm:ss’ specifying the starting UTC date of the simulation for each nest. The start_date variable is an alternate to specifying start_year, start_month, start_day, and start_hour, and if both methods are used for specifying the starting time, the start_date variable will take precedence"
+end_date,no default,"A list of MAX_DOM character strings of the form ‘YYYY-MM-DD_HH:mm:ss’ specifying the ending UTC date of the simulation for each nest. The end_date variable is an alternate to specifying end_year, end_month, end_day, and end_hour, and if both methods are used for specifying the ending time, the end_date variable will take precedence"
+interval_seconds,no default,The integer number of seconds between time-varying meteorological input files
+active_grid,TRUE,"A list of MAX_DOM logical values specifying, for each grid, whether that grid should be processed by geogrid and metgrid"
+io_form_geogrid,2 (NetCDF),"The WRF I/O API format that the domain files created by the geogrid program will be written in. Possible options are: 1 for binary; 2 for NetCDF; 3 for GRIB1. When option 1 is given, domain files will have a suffix of .int; when option 2 is given, domain files will have a suffix of .nc; when option 3 is given, domain files will have a suffix of .gr1"
+output_from_geogrid,"current working directory
+(i.e., ./ )","A character string giving the path, either relative or absolute, to the location where output files from geogrid should be written to and read from"
+debug_level,0,"An integer value indicating the extent to which different types of messages should be sent to standard output. When debug_level is set to 0, only generally useful messages and warning messages will be written to standard output. When debug_level is greater than 100, informational messages that provide further runtime details are also written to standard output. Debugging messages and messages specifically intended for log files are never written to standard output, but are always written to the log files"

@@ -1,0 +1,57 @@
+num_metgrid_levels,27,"number of vertical levels available in
+met_em* input; to check, use command
+ncdump -h met_em.d0* (using the full name
+of one of the met_em* files)",single entry
+num_metgrid_soil_levels,4,"number of soil levels or layers available in
+met_em* input; use the same command as
+above to check this value",single entry
+eta_levels,"(for example)
+1.0, 0.99, ...0.0","model eta levels from 1 to 0. If not
+specified real.exe provides a reasonable
+set of numbers",single entry
+auto_levels_opt,2,"option to determine how vertical levels are
+determined;
+
+=1 : (older option) assumes a known first
+several layers, then generates equi-height 
+spaced levels up to the model top
+
+=2 : set 'dzstretch_s,'  'dzstretch_u,'  'dzbot,'
+and 'max_dz' to stretch levels according to 
+logP, up to where it reaches max thickness 
+(max_dz) and starting from thickness dzbot",single entry
+max_dz,1000,"max level thickness (in meters) allowed
+when 'auto_levels_opt=2'",single entry
+dzbot,50,"thickness (in meters) of lowest layer when
+'auto_levels_opt=2'",single entry
+dzstretch_s,1.3,"surface stretch factor when using
+'auto_levels_opt=2'",single entry
+dzstretch_u,1.1,"upper stretch factor when using
+'auto_levels_opt=2'",single entry
+ideal_init_method,1,"method to compute albedo for idealized
+cases (in start_em.F file);
+
+=1 : albedo from phb
+
+=2 : albedo from t_init",single entry
+interp_method_type,2,"horizontal interpolation method, coarse
+grid to fine grid; note: for all options
+(except option 2), the fine-grid lateral
+boundaries use the same horizontal scheme
+for lateral BC computations;
+
+=1 : bi-linear
+
+=2: Smolarkiewicz (SINT) method; note, this
+is the default method, but can break with 
+implementation inside WRF for large 
+refinement ratios (e.g., 15:1) - use other 
+options for those extreme/rare occurrences
+
+=3 : nearest-neighbor; only use for testing
+
+=4 : overlapping quadratic
+
+=12 : uses SINT, and same scheme for
+computation of fine-grid lateral
+boundaries; only use for testing",single entry

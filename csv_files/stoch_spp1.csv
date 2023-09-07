@@ -1,0 +1,61 @@
+spp,0,"set to =1 to turn on stochastically-perturbed
+parameter scheme (SPP); only works with
+Grell Freitas convective scheme (cu_physics=3), 
+MYNN PBL scheme (bl_pbl_physics=5 or 6), 
+& RUC surface scheme (sf_surface_physics=3)",max_dom
+spp_conv,0,"set to =1 to turn on perturbation of 
+parameters for Grell Freitas convective
+scheme (cu_physics=3)",max_dom
+lengthscale_spp_conv,150000,"perturbation length scale (in meters);
+for Grell Freitas convective scheme (cu_physics=3)",max_dom
+timescale_spp_conv,21600,"temporal decorrelation of random field 
+(in seconds); for Grell Freitas convective scheme (cu_physics=3)",max_dom
+gridpt_stddev_spp_conv,0.3,"standard deviation of random perturbation 
+field at each grid point; for Grell Freitas convective scheme (cu_physics=3)",max_dom
+stddev_cutoff_spp_conv,3.0,"cutoff tails of perturbation pattern above this 
+threshold standard deviation; for Grell Freitas convective scheme (cu_physics=3)",max_dom
+vertstruc_spp_conv,1,"determines vertical structure for random
+perturbation; for Grell Freitas convective scheme (cu_physics=3)
+
+=0 : constant
+
+=1 : random phase",single entry
+iseed_spp_conv,171,"seed for random number stream for spp_conv;
+for Grell Freitas convective scheme (cu_physics=3)",single entry
+spp_pbl,0,"set to =1 to turn on perturbation of 
+parameters for MYNN PBL scheme
+(bl_pbl_physics=5 or 6)",max_dom
+lengthscale_spp_pbl,700000.0,"perturbation length scale (in meters);
+for MYNN PBL scheme (bl_pbl_physics=5 or 6)",max_dom
+timescale_spp_pbl,21600.0,"temporal decorrelation of random field 
+(in seconds); for MYNN PBL scheme (bl_pbl_physics=5 or 6)",max_dom
+gridpt_stddev_spp_pbl,0.15,"standard deviation of random perturbation 
+field at each grid point; for MYNN PBL scheme (bl_pbl_physics=5 or 6)",max_dom
+stddev_cutoff_spp_pbl,2.0,"cutoff tails of perturbation pattern above this 
+threshold standard deviation; for MYNN PBL scheme (bl_pbl_physics=5 or 6)",max_dom
+vertstruc_spp_pbl,1,"determines vertical structure for random
+perturbation; for MYNN PBL scheme (bl_pbl_physics=5 or 6)
+
+=0 : constant
+
+=1 : random phase",single entry
+iseed_spp_pbl,217,"seed for random number stream for spp_pbl;
+for MYNN PBL scheme (bl_pbl_physics=5 or 6)",single entry
+spp_lsm,1,"Turns on perturbation of parameters for
+RUC LSM (sf_surface_physics=3)",max_dom
+lengthscale_spp_lsm,50000,"perturbation length scale (in meters);
+for RUC LSM (sf_surface_physics=3)",max_dom
+timescale_spp_lsm,86400,"temporal decorrelation of random field 
+(in seconds); for RUC LSM (sf_surface_physics=3)",max_dom
+gridpt_stddev_spp_lsm,0.3,"standard deviation of random perturbation 
+field at each grid point; for RUC LSM (sf_surface_physics=3)",max_dom
+stddev_cutoff_spp_lsm,3.0,"cutoff tails of perturbation pattern above this 
+threshold standard deviation; for RUC LSM (sf_surface_physics=3)",max_dom
+vertstruc_spp_lsm,1,"determines vertical structure for random
+perturbation; for RUC LSM (sf_surface_physics=3)
+
+=0 : constant
+
+=1 : random phase",single entry
+iseed_spp_lsm,317,"seed for random number stream for spp_lsm;
+for RUC LSM (sf_surface_physics=3)",single entry

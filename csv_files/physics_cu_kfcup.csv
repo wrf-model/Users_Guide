@@ -1,0 +1,15 @@
+shallowcu_forced_ra,.false.,"radiative impact of shallow cumulus by a
+prescribed max cloud fraction of 0.36",max_dom
+numbins,1,"number of perturbations for potential
+temperature and mixing ratio in the CuP
+PDF; should be an odd number; 
+recommended value is 21",max_dom
+thBinSize,1,"bin size of potential temperature
+perturbation increment (0.01 K)",max_dom
+minDeepFreq,1,"minimum frequency required before deep
+convection is allowed (0.333)",max_dom
+minShallowFreq,1,"minimum frequency required before shallow
+convection is allowed (1.0e-2)",max_dom
+shcu_aerosols_opt,0,"set to =2 to use this prognostic option to 
+include aerosols in the shallow cumulus
+scheme; only works for WRF-Chem",max_dom

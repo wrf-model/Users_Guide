@@ -1,0 +1,10 @@
+vortex_interval,15,"how often the new vortex position is
+computed (in mins)",max_dom
+max_vortex_speed,40,"used to compute the search radius for the
+new vortex position (in m/s)",max_dom
+corral_dist,8,"how close (in number of grid cells) the
+moving nest is allowed to get to the coarse
+grid boundary, before the coarse grid moves",max_dom
+track_level,50000,"pressure level value (in Pa) at which the 
+tropical storm vortex is tracked",single entry
+time_to_move,0,time (in mins) to start moving the nest,max_dom

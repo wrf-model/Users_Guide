@@ -1,0 +1,13 @@
+"run_days
+
+run_hours
+
+run_minutes
+
+run_seconds",0,"Simulation length in days, hours, minutes,
+and seconds; Use any combination of 
+run_* settings to obtain the full desired 
+simulation length. run_* parameters take 
+precedence over start_* and end_* times 
+when running wrf.exe; real.exe does not use 
+run_* settings.",Single entry 

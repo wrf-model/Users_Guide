@@ -1,0 +1,83 @@
+time_step,,"time step for model integration seconds; 
+No more than 6xDX in km",single entry 
+time_step_fract_num,0,numerator if using a fractional time step,single entry
+time_step_fract_den,1,"denominator if using a fractional time step; 
+(e.g., if you want a time step of 60.3 secs, 
+set time_step=60; time_step_fract_num=3;
+and time_step_fract_den=10)",single entry
+time_step_dfi,,"time step when using 'dfi_opt=1' (may
+be different than regular time step)",single entry
+max_dom,1,the number of domains you are simulating,single entry
+"s_we
+
+s_sn
+
+s_vert",1,"start index in x (east-west), y (south-
+north), and z (vertical) directions, 
+respectively. DO NOT change these values",max_dom
+"e_we
+
+e_sn",32,"end index in x (east-west), and y (south-
+north) direction, respectively; staggered
+dimension ",max_dom
+e_vert,31,"end index in z (vertical) direction; 
+staggered dimension for full levels (most
+variables are on unstaggered levels); 
+vertical dimensions must be the same
+for all domains",max_dom
+"dx
+
+dy",200,"grid length (resolution) in the x and y
+directions (in meters)",single entry
+ztop,15000,"height (in meters) used to define model
+top for idealized cases",max_dom
+grid_id,1,domain identifier,max_dom
+parent_id,1,ID of the domain's parent domain,max_dom
+"i_parent_start
+
+j_parent_start",1,"the starting lower left corner i-indice and 
+ j-indice of the nest within its parent domain",max_dom
+parent_grid_ratio,1,"parent-to-nest grid size ratio; recommend
+odd ratios (3:1 or 5:1); can be even if
+'feedback=0'",max_dom
+parent_time_step_ratio,1,"parent-to-nest time step ratio; typically the
+same as 'parent_grid_ratio,' but it doesn't
+have to be the same",max_dom
+feedback,1,"feedback data from nest to parent domain;
+set to =0 to turn off",single entry
+smooth_option,2,"smoothing option for parent domain; 
+feedback must be turned on to use this
+option (feedback=1);
+
+=0 : turned off
+
+=1 : 1-2-1 smoothing
+
+=2 : smoothing-desmoothing",single entry
+hypsometric_opt,2,"When set to =2, computes height in real.exe
+and pressure in the model by using the
+hypsometric equation (less biased when
+compared against input data); set to =1 to
+use a form of the hydrostatic equation
+that depends on air density",single entry
+max_ts_locs,5,"maximum number of time series locations
+when using the time series (tslist) option",single entry
+max_ts_level,15,"highest model level for profile output when
+using the time series option",single entry
+wif_input_opt,0,"option for additional data processing when
+using 'mp_physics=28;
+
+=1 : to process the Water Ice Friendly
+Aerosol input from metgrid; see 
+'run/README.namelist'for additional 
+info
+
+=2 : (new since V4.4) use black carbon
+aerosol category and its radiative effect. 
+Must include file QNWFA_QNIFA
+_QNBCA_SIGMA_MONTHLY.dat during 
+WPS",single entry
+num_wif_levels,30,"number of levels in the Thompson Water
+Ice Friendly Aerosols; use with
+'mp_physics=28'; see run/README.namelist
+for additional info",single entry

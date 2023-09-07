@@ -1,0 +1,8 @@
+iofields_filename,"""my_iofields_list.txt""","option to output additional variables, or 
+remove variables from output; must create
+a text file (e.g., my_iofields_list.txt) in which
+variables to add/remove are declared.",max_dom
+ignore_iofields_warning,.true.,"the model will continue if an error is
+encountered in the user-specified file above; 
+set to .false. to abort the model if an error
+is encountered",single entry

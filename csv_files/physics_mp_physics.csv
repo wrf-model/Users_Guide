@@ -1,0 +1,154 @@
+mp_physics,,"microphysics setting; all domains should be 
+set to the same value;
+
+=0 : no microphysics
+
+=1 : Kessler scheme
+
+=2 : Purdue Lin scheme
+
+=3 : WSM 3-class ice scheme
+
+=4 : WSM 5-class scheme
+
+=5 : Ferrier (Eta) scheme
+
+=6 : WSM 6-class graupel scheme
+
+=7 : Goddard 4-ice scheme; also uses
+""gsfcgce_hail"" and ""gsfcgce_2ice""
+
+=8 : Thompson graupel scheme
+
+=9 : Milbrandt-Yau 2-moment scheme
+
+=10 : Morrison 2-moment
+
+=11 : CAM 5.1 5-class
+
+=13 : SBU_YLin 5-class
+
+=14 : WDM 5-class
+
+=15 : High-res Ferrier with advection
+
+=16 : WDM 6-class
+
+=17 : NSSL 2-moment 4-ice
+ 
+=18 : NSSL 2-moment 4-ice with predicted
+CCN; better for idealized cases; to set
+a global CCN value, use ""nssl_ccn=0.79e9"" 
+and same setting for ""ccn_conc""
+
+=19 : NSSL 1-moment, 6 class
+
+=21 : NSSL-LFO 1-moment, 6-class; see
+run/README.namelist for specifics
+
+=22 : NSSL 2-moment, 3-ice, no hail
+
+=24 : WSM7; like WSM6, but with hail
+
+=26 : WDM7; like WDM6, but with hail
+
+=28 : aerosol-aware Thompson with
+water- and ice-friendly aerosol climatology; 
+option to also set climatological aerosol 
+input option ""use_aero_icbs"" - default is .false.,
+(use constant values); set to .true. to use input 
+from WPS
+
+=30 : HUJI spectral bin, fast version
+
+=38 : Thompson hail/graupel/aerosol
+
+=40 : Morrison double-moment with CESM
+aerosol (must be used with MSKF cumulus 
+scheme)
+
+=50 : P3 1-ice category, 1-moment cloud water
+
+=51 : P3 1-ice category, 2-moment cloud water
+
+=52 : P3 2-ice categories, 2-moment cloud water
+
+=53 : P3 1-ice category, 3-moment ice, 2-moment cloud 
+water; new since V4.3
+
+=55 : Jensen ISHMAEL; new since V4.1
+
+=56 : NTU multi-moment; new since V4.3  
+   
+    ",max_dom
+ccnty,0,"Aerosol options for NTU microphysics 
+(mp_physics=56);
+
+=1 : marine aerosol background type
+
+=2 : continental clean aerosol type
+
+=3 : continental average aerosol type
+
+=4 : continental urban aerosol type",max_dom
+do_radar_ref,0,"set to =1 to allow radar reflectivity to be
+computed using mp-scheme-specific
+parameters; only works for mp_physics=
+2,4,6,7,8,10,14,16,24,26",single input
+mp_zero_out,0,"set to =1 to keep moisture variables above
+a threshold value >=0; an alternative (and
+better) method to keep moisture variables
+positive is to use the ""moist_adv_opt;""
+
+=0 : no action/adjustment to moisture
+fields
+
+=1 : except for Qv, all moisture arrays are
+set to zero if they fall below the 
+""mp_zero_out_thresh"" value
+
+=2 : Qv and all other moisture arrays
+set to zero if they fall below
+""mp_zero_out_thresh"" value",single input
+mp_zero_out_thresh,1.e\ :sup:`-8`,"critical value for moisture variable threshold
+below which moisture arrays (except Qv)
+are set to zero when using ""mp_zero_out""; 
+unit: kg/kg",single input
+mp_tend_lim,10,"limit on temperature tendency from
+microphysics latent heating when radar
+data assimilation is used",single input
+ccn_conc,1.00E+08,"CCN concentrations; used by WDM
+microphysics schemes",single input
+hail_opt,0,"hail/graupel switch for WSM6 and WDM6
+microphysics schemes (options 6 and 16);
+
+=0 : graupel
+
+=1 : hail",single input
+morr_rimed_ice,1,"hail/graupel switch for Morrison 
+microphysics schemes (options 10 and 40);
+
+=0 : graupel
+
+=1 : hail",single input
+clean_atm_diag,0,"set to =1 to turn on clean sky diagnostics;
+for WRF-Chem",single input
+acc_phy_tend,0,"set to =1 to output 16 accumulated physics
+tendencies for potential temperature, water
+vapor mixing ratio, and u/v wind
+components; new since V4.4",max_dom
+progn,0,"set to =1 to use mix-activate scheme; only
+works with mp_physics=10,14,16,17,18",max_dom
+no_mp_heating,0,"set to =1 to turn on latent heating from a
+microphysics scheme",single entry
+use_mp_re,1,"when using RRTMG radiation, use effective
+radii computed in microphysics schemes; 
+only works with mp_physics=3,4,6,7,8,10,
+14,16,17-21,24,26,28,50-53,55",single entry
+dust_emis,0,"set to =1 to turn on surface dust emission
+scheme to enter ""mp_physics=28"" QNIFA
+(ice-friendly aerosol variable)",single entry
+erosion_dim,3,"includes erodibility information when using
+dust_emis=1",single entry
+write_thompson_mp38table,.false.,"set to =.true. to compute 
+file qr_acr_qg_mp38V1.dat instead of using the downloaded version",single entry
